@@ -22,5 +22,5 @@ urlpatterns = [
     path('investor/',include("investor.urls")),
     path('analyst/',include("analyst.urls")),
     path('entrepreneur/',include("entrepreneur.urls")),
-    path('user/profile/',userViews.showProfilePage)
+    path('user/',include("user.urls"))
 ]
