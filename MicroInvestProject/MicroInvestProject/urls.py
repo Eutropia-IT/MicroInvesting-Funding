@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from user import views as userViews
+from landing import views as landingViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('investor/',include("investor.urls")),
     path('analyst/',include("analyst.urls")),
     path('entrepreneur/',include("entrepreneur.urls")),
-    path('user/',include("user.urls"))
+    path('user/',include("user.urls")),
+    path('', landingViews.showLandingPage)
 ]
