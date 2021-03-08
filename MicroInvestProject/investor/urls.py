@@ -4,5 +4,4 @@ from . import views
 urlpatterns = [
     path('dashboard/',views.showDashboardPage),
     path('explore/',views.showExplorePage),
-    path('history/',views.showHistoryPage),
 ]
