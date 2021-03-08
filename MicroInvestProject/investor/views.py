@@ -5,3 +5,5 @@ def showDashboardPage(request):
     return render(request, 'investor/dashboard.html')
 def showExplorePage(request):
     return render(request, 'investor/explore.html')
+def showHistoryPage(request):
+    return render(request, 'investor/history.html')
