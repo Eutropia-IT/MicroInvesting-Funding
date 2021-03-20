@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: seashell;
+}
+body{
+    background-color: #030316;
+}
+.main-container{
+    margin: 0 5rem;
+}
+#intro-container .login-form h1{
+    border-bottom-style: dotted;
+    border-width: 0.1rem;
+    width:30%;
+    text-align: center;
+}
