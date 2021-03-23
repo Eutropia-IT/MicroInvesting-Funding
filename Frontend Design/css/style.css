@@ -13,6 +13,6 @@ body{
 #intro-container .login-form h1{
     border-bottom-style: dotted;
     border-width: 0.1rem;
-    width:30%;
+    width: 50%;
     text-align: center;
 }
