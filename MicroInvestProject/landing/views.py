@@ -6,4 +6,7 @@ def showLandingPage(request):
         "name" : "Al Amin",
         "age" : 12
     }
-    return render(request, 'login/home.html', myDictonary)
+    return render(request, 'landing/index.html')
+
+def signUpPage(request):
+    return render(request, 'landing/signup.html')

@@ -1,0 +1,30 @@
+{% extends 'landing/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block leftSideImage %}
+    <img src="{% static 'landing/svg/handshake.svg' %}" alt="hand shake image">
+{% endblock leftSideImage %}
+
+{% block rightSideContent %}
+      <h1>User Login</h1>
+
+      <form method="">
+        <div class="mb-3">
+          <input type="email" class="form-control" id="email" placeholder="Email">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Password">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <button type="submit" class="btn submit-btn">Login</button>
+      </form>
+      <br>
+      <div class="utility">
+        <a href="#">Forgot password?</a> <br>
+        <a href="#">Don't Have An Account? </a> <br>
+        <a href="signup/"><button type="button" class="btn">CREATE NEW ACCOUNT </button></a>
+      </div>
+{% endblock rightSideContent %}

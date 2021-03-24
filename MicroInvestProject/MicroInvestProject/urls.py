@@ -23,5 +23,6 @@ urlpatterns = [
     path('analyst/',include("analyst.urls")),
     path('entrepreneur/',include("entrepreneur.urls")),
     path('profile/',include("user.urls")),
-    path('', landingViews.showLandingPage) #Home Page
+    path('', landingViews.showLandingPage), #Home Page
+    path('signup/', landingViews.signUpPage),
 ]
