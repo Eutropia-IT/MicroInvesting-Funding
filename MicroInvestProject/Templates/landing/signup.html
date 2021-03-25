@@ -8,25 +8,53 @@
 {% endblock leftSideImage %}
 
 {% block rightSideContent %}
-      <h1>User Login</h1>
-      <form>
+      <h1>Sign UP</h1>
+      <form action="" class="needs-validation" novalidate method="POST">
+        {% csrf_token %}
         <div class="mb-3">
-          <input type="text" class="form-control" id="name" placeholder="Name">
+          <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Name.</div>
         </div>
+
         <div class="mb-3">
-          <input type="number" class="form-control" id="dob" placeholder="Nid or Birth Certificate ">
+          <input type="number" name="nid" class="form-control" id="dob" placeholder="Nid or Birth Certificate" required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Number.</div>
         </div>
+
         <div class="mb-3">
-          <input type="number" class="form-control" id="mobile" placeholder="Mobile Number ">
+          <input type="text" name="dob" class="form-control" id="dob" placeholder="Date of Birth"
+            onfocus="(this.type='date')" onblur="(this.type='text')" required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Date.</div>
         </div>
+
         <div class="mb-3">
-          <input type="email" class="form-control" id="email" placeholder="Email">
+          <input type="number" name="cell" class="form-control" id="mobile" placeholder="Mobile Number " required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Moble Number.</div>
         </div>
+
         <div class="mb-3">
-          <input type="password" class="form-control" id="password" placeholder="Password">
+          <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Email.</div>
         </div>
+
         <div class="mb-3">
-          <input type="password" class="form-control" id="confernPassword" placeholder="Confarm Password">
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+            onkeyup='check();' required>
+
+          <div class="invalid-feedback">Please provide a valid Password</div>
+        </div>
+
+        <div class="mb-3">
+          <input type="password" class="form-control" id="confirm_password" placeholder="Confarm Password"
+            onkeyup='check();' required>
+
+          <div class="invalid-feedback">Please provide a valid Password</div>
+          <span id='message'></span>
         </div>
 
         <button type="submit" class="btn submit-btn">Submit</button>
