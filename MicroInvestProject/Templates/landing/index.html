@@ -10,16 +10,18 @@
 {% block rightSideContent %}
       <h1>User Login</h1>
 
-      <form method="">
+      <form method="" class="needs-validation" novalidate>
         <div class="mb-3">
-          <input type="email" class="form-control" id="email" placeholder="Email">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <input type="email" class="form-control" id="email" placeholder="Email" / required>
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Email.</div>
         </div>
         <div class="mb-3">
-          <input type="password" class="form-control" id="password" placeholder="Password">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <input type="password" class="form-control" id="password" placeholder="Password" required />
+          <div class="valid-feedback">Valid</div>
+          <div class="invalid-feedback">Please provide a valid Password.</div>
         </div>
-        <button type="submit" class="btn submit-btn">Login</button>
+        <button type="submit" class="btn submit-btn">Submit</button>
       </form>
       <br>
       <div class="utility">
