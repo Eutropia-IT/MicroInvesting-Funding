@@ -1,10 +1,12 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render,redirect
 from user.models import User
 
 
 def showLandingPage(request):
     return render(request, 'landing/index.html')
+
 
 def signUpPage(request):
     if request.method == 'POST':
@@ -23,6 +25,7 @@ def signUpPage(request):
             var.email = request.POST.get('email')
             var.password = request.POST.get('password')
             var.save()
-            return render(request, 'landing/index.html')
+            return redirect('/')
+            #return HttpResponseRedirect('/signup/success')
     else:
         return render(request, 'landing/signup.html')
