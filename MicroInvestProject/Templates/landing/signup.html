@@ -60,3 +60,18 @@
         <button type="submit" class="btn submit-btn">Submit</button>
       </form>
 {% endblock rightSideContent %}
+
+{% block alertMessage %}
+  
+      {% if messages %}
+        {% for mess in  messages%}
+          {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <script>
+              swal('Success', '{{mess}}', "success");
+            </script>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+  
+{% endblock alertMessage %}
+
