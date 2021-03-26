@@ -11,6 +11,7 @@
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            
           }
 
           form.classList.add('was-validated')
@@ -26,6 +27,7 @@
       document.getElementById('confirm_password').style.border = '2px solid green';
       document.getElementById('password').style.border = '2px solid green';
       document.querySelector('.needs-validation button').removeAttribute('disabled', '')
+      
 
     } else {
       document.getElementById('message').style.color = 'red';
@@ -35,3 +37,4 @@
 
     }
   }
+
