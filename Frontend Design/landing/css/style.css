@@ -1,48 +1,61 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: seashell;
-}
-body {
-  background-color: #030316;
-  margin: 0rem 5rem;
-}
-h1 {
-  color: #ffb93e;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: seashell;
 }
 
-/* INTRO CONTAINER */
-#intro-container {
-  padding-top: 10rem;
+body {
+    background-color: #030316;
+    margin: 0rem 5rem;
 }
-#intro-container .left-side-intro img{
+
+h1 {
+    color: #ffb93e;
+}
+
+
+/* INTRO CONTAINER */
+
+#intro-container {
+    padding-top: 10rem;
+}
+
+#intro-container .left-side-intro img {
     width: 40rem;
     margin-left: 12rem;
     margin-top: 3rem;
 }
+
+
 /* divider line */
+
 #intro-container .divider-line {
-  padding-left: 100px;
+    padding-left: 100px;
 }
+
 #intro-container .divider-line img {
-  height: 27rem;
-  margin: auto 0;
+    height: 27rem;
+    margin: auto 0;
 }
+
 
 /* right side part */
 
-#intro-container .intro-forms h1{
+#intro-container .intro-forms h1 {
     display: flex;
     justify-content: center;
 }
+
 #intro-container .intro-forms input {
-  background-color: #ffeddc;
+    background-color: #ffeddc;
 }
+
 #intro-container .intro-forms input::placeholder {
-  color: #030316;
+    color: #030316;
 }
-#intro-container .intro-forms button{
+
+#intro-container .intro-forms button {
     background-image: linear-gradient(#FFF6BC, #FF8A00);
     height: 2.5rem;
     text-transform: uppercase;
@@ -53,22 +66,26 @@ h1 {
     transition-duration: 0.4s;
 }
 
-#intro-container .intro-forms .submit-btn{
+#intro-container .intro-forms .submit-btn {
     width: 10rem;
     margin: 0 35%;
 }
-#intro-container .intro-forms .utility{
+
+#intro-container .intro-forms .utility {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 }
-#intro-container .intro-forms .utility a{
+
+#intro-container .intro-forms .utility a {
     text-decoration: none;
     color: #FFEDDC;
 }
+
 #intro-container .intro-forms button {
-    color: #030316; 
+    color: #030316;
 }
+
 
 /* INTRO CONTAINER END */

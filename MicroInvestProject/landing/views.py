@@ -1,5 +1,3 @@
-from django.http.response import HttpResponse
-from django.http import HttpResponseRedirect
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from user.models import User
