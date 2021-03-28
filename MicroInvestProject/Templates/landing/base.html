@@ -1,0 +1,76 @@
+<!-- 
+  Project: MICRO INVESTING & FUNDING
+  Author: Eutropia It Solution
+  Developer: Al Amin
+  Co-Developer: 
+  version: 0.0.0.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- Sweet Alart JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Boostrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+</head>
+
+<body>
+    <!-- intro container-->
+    <div id="intro-container" class="row">
+        <!-- LEFT SIDE info -->
+        <div class="col-7 left-side-intro">
+            <a href="/" style="text-decoration: none;">
+                <h1>MICRO INVESTING & FUNDING</h1>
+            </a>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, deserunt porro quia eligendi officiis rerum. Nulla ipsa enim ex? Deleniti.
+            </p>
+            {% block leftSideImage %} {% comment %} <img src="{% static 'landing/svg/handshake.svg' %}" alt="hand shake image"> {% endcomment %} {% endblock leftSideImage %}
+
+        </div>
+        <!-- MIDDLE SIDE (divider-line) -->
+        <div class="col-auto divider-line">
+            <img src="{% static 'landing/svg/line.svg' %}" alt="divider line">
+        </div>
+        <!-- RIGHT SIDE info(form) -->
+        <div class="col-4 intro-forms">
+
+            {% block rightSideContent %}{% endblock rightSideContent %}
+
+        </div>
+    </div>
+    <!-- intro container END -->
+
+    <div>
+        <h1>For developer purpous.It'll be removed! </h1>
+        <p>
+            <a href="admin/">Go To Admin Panel</a><br>
+            <a href="analyst/dashboard/">Go To Analyst Dashboard Page</a><br>
+            <a href="analyst/review/">Go To Analyst Review Page</a><br>
+            <a href="entrepreneur/dashboard/">Go To Entrepreneur Dashboard Page</a><br>
+            <a href="entrepreneur/apply/">Go To Entrepreneur Apply Page</a><br>
+            <a href="investor/dashboard/">Go To Investor Dashboard Page</a><br>
+            <a href="investor/explore/">Go To Investor Explore Page</a><br>
+            <a href="profile/">Go To Use Profile Page</a><br>
+            <a href="profile/edit/">Go To Edit Profile Page</a><br>
+            <a href="profile/history/">Go To All History of User Page</a><br>
+        </p>
+    </div>
+
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- form validiation script -->
+    <script src="{% static 'landing/js/formValidation.js' %}"></script>
+    <!-- Sweet Alart Message script -->
+    {% block alertMessage %}{% endblock alertMessage %}
+</body>
+
+</html>

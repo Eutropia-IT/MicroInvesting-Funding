@@ -1,0 +1,23 @@
+{% extends 'landing/base.html' %} {% load static %} {% block title %}Home{% endblock title %} {% block leftSideImage %}
+<img src="{% static 'landing/svg/handshake.svg' %}" alt="hand shake image"> {% endblock leftSideImage %} {% block rightSideContent %}
+<h1>--</h1>
+<form method="" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <input type="email" class="form-control" id="email" placeholder="Email" / required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Email.</div>
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" id="password" placeholder="Password" required />
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Password.</div>
+    </div>
+    <button type="submit" class="btn submit-btn">Login</button>
+</form>
+<br>
+<div class="utility">
+    <a href="#">Forgot password?</a> <br>
+    <a href="#">Don't Have An Account? </a> <br>
+    <a href="signup/"><button type="button" class="btn">CREATE NEW ACCOUNT </button></a>
+</div>
+{% endblock rightSideContent %}

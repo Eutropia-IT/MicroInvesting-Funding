@@ -1,0 +1,93 @@
+{% extends 'landing/base.html' %} {% load static %} {% block title %}SignUp{% endblock title %} {% block leftSideImage %}
+<img src="{% static 'landing/svg/happyContruct.svg' %}" alt="hand shake image"> {% endblock leftSideImage %} {% block rightSideContent %}
+<h1>--</h1>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<form action="" class="needs-validation" novalidate method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" name="name" class="form-control" id="name" placeholder="Name" required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Name.</div>
+    </div>
+
+    <div class="mb-3">
+        <input type="number" name="nid" class="form-control" id="nid" placeholder="Nid or Birth Certificate" required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Number.</div>
+    </div>
+
+    <div class="mb-3">
+        <input type="text" name="dob" class="form-control" id="dob" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Date.</div>
+    </div>
+
+    <div class="mb-3">
+        <input type="number" name="cell" class="form-control" id="mobile" placeholder="Mobile Number" required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Moble Number.</div>
+    </div>
+
+    <div class="mb-3">
+        <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+        <div class="valid-feedback">Valid</div>
+        <div class="invalid-feedback">Please provide a valid Email.</div>
+    </div>
+
+    <div class="mb-3">
+        <input type="password" name="password" class="form-control" id="password" placeholder="Password" onkeyup='check();' required>
+
+        <div class="invalid-feedback">Please provide a valid Password</div>
+    </div>
+
+    <div class="mb-3">
+        <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" onkeyup='check();' required>
+
+        <div class="invalid-feedback">Please provide a valid Password</div>
+        <span id='message'></span>
+    </div>
+
+    <button type="submit" class="btn submit-btn">Register</button>
+</form>
+{% endblock rightSideContent %} {% block alertMessage %} {% if messages %} {% for mess in messages%} {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<script>
+    swal('Success', 'We just need to verify your email address before you can access. Verify your email address', "success");
+</script>
+<div class="swal-overlay swal-overlay--show-modal" tabindex="-1">
+    <div class="swal-modal" role="dialog" aria-modal="true">
+        <div class="swal-icon swal-icon--success">
+            <span class="swal-icon--success__line swal-icon--success__line--long"></span>
+            <span class="swal-icon--success__line swal-icon--success__line--tip"></span>
+            <div class="swal-icon--success__ring"></div>
+            <div class="swal-icon--success__hide-corners"></div>
+        </div>
+        <div class="swal-title">Success</div>
+        <div class="swal-text">We just need to verify your email address before you can access. Verify your email address</div>
+        <div class="swal-footer">
+            <div class="swal-button-container">
+
+                <button class="swal-button swal-button--confirm" onclick="location.href='/' ;">OK</button>
+
+                <div class="swal-button__loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %} {% endfor %} {% endif %} {% endblock alertMessage %}
