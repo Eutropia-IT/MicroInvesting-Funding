@@ -1,6 +1,6 @@
 {% extends 'landing/base.html' %} {% load static %} {% block title %}SignUp{% endblock title %} {% block leftSideImage %}
 <img src="{% static 'landing/svg/happyContruct.svg' %}" alt="hand shake image"> {% endblock leftSideImage %} {% block rightSideContent %}
-<h1>--</h1>
+<h1 style="color: #030316;">--</h1>
 <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -89,5 +89,32 @@
         </div>
     </div>
 </div>
+{% endif %} {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<script>
+    swal('Error', '{{mess}}', 'error');
+</script>
+<!-- <div class="swal-overlay swal-overlay--show-modal" tabindex="-1">
+    <div class="swal-modal" role="dialog" aria-modal="true">
+        <div class="swal-icon swal-icon--warning">
+            <span class="swal-icon--success__line swal-icon--success__line--long"></span>
+            <span class="swal-icon--success__line swal-icon--success__line--tip"></span>
+            <div class="swal-icon--success__ring"></div>
+            <div class="swal-icon--success__hide-corners"></div>
+        </div>
+        <div class="swal-title">Error</div>
+        <div class="swal-text"></div>
+<div class="swal-footer">
+    <div class="swal-button-container">
 
-{% endif %} {% endfor %} {% endif %} {% endblock alertMessage %}
+        <button class="swal-button swal-button--confirm" onclick="location.href='/' ;">OK</button>
+
+        <div class="swal-button__loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div> -->{% endif %} {% endfor %} {% endif %} {% endblock alertMessage %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from user.models import User
+from django.db import IntegrityError
 
 
 def showLandingPage(request):
@@ -23,11 +24,16 @@ def signUpPage(request):
             var.cell = request.POST.get('cell')
             var.email = request.POST.get('email')
             var.password = request.POST.get('password')
-            var.save()
+            try:
+                var.save()
+                messages.success(request, 'We just need to verify your email address before you can access. Verify your email address')
+                return redirect('/signup')
+            except IntegrityError as e:
+                if 'UNIQUE constraint failed' in e.args[0]:
+                    messages.error(request, 'It seems that this NID or Email is already associated with another account', )
+                    return redirect('/signup')
 
-            messages.error(request, 'This is error message')
-            messages.success(request, 'We just need to verify your email address before you can access. Verify your email address')
-            return redirect('/signup')
+            
             #return HttpResponseRedirect('/signup/success')
     else:
         return render(request, 'landing/signup.html')
