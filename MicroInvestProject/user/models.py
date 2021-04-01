@@ -1,12 +1,13 @@
 from django.db import models
+from django.db.models.deletion import DO_NOTHING
 # Create your models here.
 
 class User(models.Model):
     name = models.TextField()
     nid = models.IntegerField(unique=True)
     dob = models.DateField(null=True)
-    cell = models.IntegerField(max_length=11)
-    email = models.EmailField()
+    cell = models.IntegerField()
+    email = models.EmailField(unique=True)
     password = models.TextField()
     isActive = models.BooleanField(default=False)
     isInvestor = models.BooleanField(default=False)
@@ -14,3 +15,15 @@ class User(models.Model):
     isAnalyst = models.BooleanField(default=False)
     totalInvested = models.FloatField(default=0.00)
     totalWithdrawn = models.FloatField(default=0.00)
+
+class Transaction(models.Model):
+    Deposit = 'deposit'
+    Withdraw = 'withdraw'
+    options = [
+        (Deposit, 'deposit'),
+        (Withdraw, 'withdraw'),
+    ]
+    trans_type = models.TextField(choices=options)
+    user_ID = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    amount = models.FloatField()
+

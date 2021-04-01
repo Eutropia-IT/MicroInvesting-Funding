@@ -62,7 +62,7 @@
 </form>
 {% endblock rightSideContent %} {% block alertMessage %} {% if messages %} {% for mess in messages%} {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
 <script>
-    swal('Success', 'We just need to verify your email address before you can access. Verify your email address', "success");
+    swal('Success', '{{mess}}', 'success');
 </script>
 <div class="swal-overlay swal-overlay--show-modal" tabindex="-1">
     <div class="swal-modal" role="dialog" aria-modal="true">
