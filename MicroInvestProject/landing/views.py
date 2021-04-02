@@ -1,10 +1,14 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from django.contrib.auth import authenticate,login,logout
 from user.models import User
 from django.db import IntegrityError
 
 
 def showLandingPage(request):
+    if request.method == 'POST':
+        if request.POST.get('email') and request.POST.get('password'):
+            pass
     return render(request, 'landing/index.html')
 
 

@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def showProfilePage(request):
-    return render(request, 'profile/profile.html')
+    return render(request, 'user/index.html')
 def showEditProfilePage(request):
     return render(request, 'profile/edit_profile.html')
 def showHistoryPage(request):

@@ -1,5 +1,6 @@
 from user.models import User
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -15,4 +16,8 @@ class Projects(models.Model):
     feedback1 = models.TextField()
     feedback2 = models.TextField()
     feedback3 = models.TextField()
+    applyDate = models.DateTimeField(default=datetime.now)
+
+    def __str__(self):
+        return '%s' % (self.id)
     

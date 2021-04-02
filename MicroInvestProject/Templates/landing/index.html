@@ -1,14 +1,15 @@
 {% extends 'landing/base.html' %} {% load static %} {% block title %}Home{% endblock title %} {% block leftSideImage %}
 <img src="{% static 'landing/svg/handshake.svg' %}" alt="hand shake image"> {% endblock leftSideImage %} {% block rightSideContent %}
 <h1 style="color: #030316;">--</h1>
-<form method="" class="needs-validation" novalidate>
+<form action="" method="POST" class="needs-validation" novalidate>
+    {% csrf_token %}
     <div class="mb-3">
-        <input type="email" class="form-control" id="email" placeholder="Email" / required>
+        <input type="email" name="email" class="form-control" id="email" placeholder="Email" required />
         <div class="valid-feedback">Valid</div>
         <div class="invalid-feedback">Please provide a valid Email.</div>
     </div>
     <div class="mb-3">
-        <input type="password" class="form-control" id="password" placeholder="Password" required />
+        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required />
         <div class="valid-feedback">Valid</div>
         <div class="invalid-feedback">Please provide a valid Password.</div>
     </div>
