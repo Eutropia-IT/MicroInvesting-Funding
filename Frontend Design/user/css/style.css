@@ -1,103 +1,258 @@
 /* user css */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: seashell;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: seashell;
 }
-body{
-    background-color: #030316;
+body {
+  background-color: #030316;
 }
-h1 {
-    color: #ffb93e;
+h1,
+h2 {
+  color: #ffb93e;
 }
 
 /* top nav bar */
-.top-navber{
-    display: grid;
-    grid-template-columns: 40% auto 30%;
-    align-content: center;
-    background-color: #6363633f;
-    padding: 1rem 1.5rem;
+.top-navber {
+  display: grid;
+  grid-template-columns: 40% auto 30%;
+  align-content: center;
+  background-color: #6363633f;
+  padding: 1rem 1.5rem;
 }
-.top-navber ul li{
-    display: inline-block;
+.top-navber ul li {
+  display: inline-block;
 }
-.top-navber ul li a{
-    color: seashell;
-    text-decoration: none;
-    padding: 0 10px;
+.top-navber ul li a {
+  color: seashell;
+  text-decoration: none;
+  padding: 0 10px;
 }
-.top-navber .controller li{
-    display: inline-block;
+.top-navber .controller li {
+  display: inline-block;
 }
-.top-navber .controller li a{
-    color: seashell;
-    text-decoration: none;
-    padding: 0 10px;
+.top-navber .controller li a {
+  color: seashell;
+  text-decoration: none;
+  padding: 0 10px;
+}
+/* main content */
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 1fr;
+  margin: 1rem 0;
+  height: 55vh;
+}
+.main-content .left-side {
+  grid-column: 1/9;
+  margin-left: 2rem;
+  display: flex;
+}
+.main-content .left-side .profile-pic img {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+.main-content .left-side .intro-box {
+  background-color: #6363633f;
+  width: 50rem;
+  height: 15rem;
+  border-radius: 2%;
+  margin: 0 2rem;
 }
 
+.main-content .left-side .intro-box img {
+  width: 270px;
+  height: 230px;
+  margin: -50px 0 0 500px;
+}
+.main-content .line {
+  grid-column: 9/10;
+}
+.main-content .line img {
+  height: 35rem;
+  float: right;
+  width: auto;
+}
+.main-content .right-side {
+  grid-column: 11/12;
+  margin-left: -100px;
+}
+.main-content .right-side ul li {
+  display: flex;
+  background-color: #6363633f;
+  border-radius: 2rem;
+  width: 500px;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+.main-content .right-side ul li img {
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+}
+.main-content .right-side ul li h5 {
+  margin-left: 15px;
+  width: 12rem;
+}
+.main-content .right-side ul li p {
+  font-size: 1.5rem;
+  margin-left: 70px;
+  background-color: #3d3d4c;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  width: 6.5rem;
+  text-align: center;
+  color: #ffb93e;
+  font-weight: bolder;
+}
+.main-content .balance-ctrl {
+  grid-column: 2/9;
+  grid-row: 2/2;
+  margin-top: -300px;
+  width: 60rem;
+  height: 12rem;
+}
+.main-content .balance-ctrl .t-balance {
+  grid-area: "t-balance";
+}
+.main-content .balance-ctrl .t-invest {
+  grid-area: "t-invest";
+}
+.main-content .balance-ctrl {
+  display: grid;
+  grid-template-areas: "t-balance t-invest";
+}
+.main-content .balance-ctrl li {
+  display: flex;
+  background-color: #6363633f;
+  border-radius: 2rem;
+  width: 400px;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+.main-content .balance-ctrl li h5 {
+  margin-left: 15px;
+  width: 12rem;
+}
+.main-content .balance-ctrl li p {
+  font-size: 1.5rem;
+  margin-left: 70px;
+  background-color: #3d3d4c;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  width: 6.5rem;
+  text-align: center;
+  color: #ffb93e;
+  font-weight: bolder;
+}
+
+/* project summary */
+.project-box{
+  margin: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+}
+.project-box h1{
+  grid-column: 1/-1;
+}
+.project-box .project-title{
+  margin-bottom: 1rem;
+}
+.project-box .project01,.project02,.project03{
+  background-color: #171726;
+  width: 550px;
+  height: 220px;
+  border-radius: 3%;
+  padding: 1%;
+  margin: 0.5rem;
+}
+.project-box .indecator{
+  margin: -73px 0 0px 384px;
+  text-align: center;
+}
+.project-box .indecator label{
+  text-shadow:1px 1px 0 #444;
+  width: 30px;
+  height: 30px;
+  color: seashell;
+  font-weight: bolder;
+  border-radius: 10%;
+}
+.project-box .indecator button{
+  background-image: linear-gradient(#FFF6BC, #FF8A00);
+    height: 2.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #030316;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
 
 /* toggle switch */
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffb93e;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #030316;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #ffb93e;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffb93e;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #030316;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ffb93e;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
