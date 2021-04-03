@@ -15,13 +15,36 @@ def showLandingPage(request):
             qs1 = User.objects.get(email=useremail)
             try:
                 qs2 = User.objects.get(password=userpassword)
-                return redirect('investor/dashboard/')
+                if qs1==qs2:
+                    qs3 = User.objects.values_list('isAnalyst',flat=True).filter(id=int('%s'%qs1))  
+                       
+                    if qs3[0] == True:
+                        return redirect('analyst/dashboard/')
+                    else:
+                        return redirect('investor/dashboard/')
+                    
+                else:
+                    messages.error(request, 'Wrong Email or Password', )
+                    return redirect('/')
             except ObjectDoesNotExist as e:
                 if 'User matching query does not exist' in e.args[0]:
                     messages.error(request, 'Wrong Email or Password', )
                     return redirect('/')
             except MultipleObjectsReturned:
-                return redirect('investor/dashboard/')
+                qs2 = User.objects.values_list('password',flat=True).filter(id=int('%s'%qs1)) 
+                
+                if userpassword==qs2[0]:
+                    qs3 = User.objects.values_list('isAnalyst',flat=True).filter(id=int('%s'%qs1))  
+                      
+                    if qs3[0] == True:
+                        return redirect('analyst/dashboard/')
+                    else:
+                        return redirect('investor/dashboard/')
+                    
+                else:
+                    messages.error(request, 'Wrong Email or Password', )
+                    return redirect('/')
+            
                 
         except ObjectDoesNotExist as e:
             if 'User matching query does not exist' in e.args[0]:
