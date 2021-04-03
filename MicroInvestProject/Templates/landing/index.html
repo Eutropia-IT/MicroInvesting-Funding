@@ -21,4 +21,8 @@
     <a href="#">Don't Have An Account? </a> <br>
     <a href="signup/"><button type="button" class="btn">CREATE NEW ACCOUNT </button></a>
 </div>
-{% endblock rightSideContent %}
+{% endblock rightSideContent %} {% block alertMessage %} {% if messages %} {% for mess in messages%} {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+<script>
+    swal('Error', '{{mess}}', 'error');
+</script>
+{% endif %} {% endfor %} {% endif %} {% endblock alertMessage %}
