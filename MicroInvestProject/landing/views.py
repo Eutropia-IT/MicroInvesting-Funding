@@ -1,14 +1,33 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate,login,logout
+
 from user.models import User
 from django.db import IntegrityError
+from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 
 
 def showLandingPage(request):
     if request.method == 'POST':
-        if request.POST.get('email') and request.POST.get('password'):
-            logUser = authenticate( username = 'alamin',  password = request.POST.get('password'))
+        useremail= request.POST.get('email')  
+        userpassword = request.POST.get('password')
+        
+        try:
+            qs1 = User.objects.get(email=useremail)
+            try:
+                qs2 = User.objects.get(password=userpassword)
+                return redirect('investor/dashboard/')
+            except ObjectDoesNotExist as e:
+                if 'User matching query does not exist' in e.args[0]:
+                    messages.error(request, 'Wrong Email or Password', )
+                    return redirect('/')
+            except MultipleObjectsReturned:
+                return redirect('investor/dashboard/')
+                
+        except ObjectDoesNotExist as e:
+            if 'User matching query does not exist' in e.args[0]:
+                messages.error(request, 'Wrong Email or Password', )
+                return redirect('/')
+    
     return render(request, 'landing/index.html')
 
 
@@ -38,6 +57,6 @@ def signUpPage(request):
                     return redirect('/signup')
 
             
-            #return HttpResponseRedirect('/signup/success')
+            
     else:
         return render(request, 'landing/signup.html')
