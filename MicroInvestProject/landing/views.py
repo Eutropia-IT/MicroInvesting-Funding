@@ -8,7 +8,7 @@ from django.db import IntegrityError
 def showLandingPage(request):
     if request.method == 'POST':
         if request.POST.get('email') and request.POST.get('password'):
-            pass
+            logUser = authenticate( username = 'alamin',  password = request.POST.get('password'))
     return render(request, 'landing/index.html')
 
 

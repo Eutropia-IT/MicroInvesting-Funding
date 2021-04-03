@@ -10,4 +10,4 @@ class Investment(models.Model):
     amount = models.FloatField(default=0.0)
     investmentDate = models.DateTimeField(default=datetime.now)
     def __str__(self):
-        return self.investor_ID
+        return '%s' % (self.investor_ID)
