@@ -7,7 +7,11 @@ from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 
 def showLandingPage(request):
     if 'login' in request.session:
-        return redirect('investor/dashboard/')
+        userData = User.objects.get(id = request.session.get('userID'))
+        if userData.isAnalyst == True:
+            return redirect('analyst/dashboard/') # for analyst user
+        else:
+            return redirect('investor/dashboard/') #for general user
     elif request.method == 'POST':
         useremail= request.POST.get('email')  
         userpassword = request.POST.get('password')
@@ -16,15 +20,17 @@ def showLandingPage(request):
             getUser = User.objects.filter(email=useremail, password = userpassword)
             if getUser:
                 request.session['login'] = True
-                request.session['userData'] = getUser[0].id
-                return redirect('investor/dashboard/')
+                request.session['userID'] = getUser[0].id
+                if getUser[0].isAnalyst == True:
+                    return redirect('analyst/dashboard/') # after successfull login go to analyst user
+                else:
+                    return redirect('investor/dashboard/') # after successfull login go to general user
             else:
                 messages.error(request, 'Wrong Email or Password')
-
                 return redirect('/')
     else:    
-        print(request.session.get('userData'))
-        return render(request, 'landing/index.html')
+        #print(request.session.get('userData'))
+        return render(request, 'landing/index.html') 
 
 
 def signUpPage(request):
@@ -58,7 +64,7 @@ def signUpPage(request):
 def logout(request):
     try:
         del request.session['login']
-        del request.session['userData']
+        del request.session['userID']
     except KeyError:
         pass
     return redirect('/')
