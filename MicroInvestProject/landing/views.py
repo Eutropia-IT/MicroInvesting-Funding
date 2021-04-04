@@ -11,6 +11,7 @@ def showLandingPage(request):
     elif request.method == 'POST':
         useremail= request.POST.get('email')  
         userpassword = request.POST.get('password')
+
         if useremail and userpassword:
             getUser = User.objects.filter(email=useremail, password = userpassword)
             if getUser:
@@ -19,6 +20,7 @@ def showLandingPage(request):
                 return redirect('investor/dashboard/')
             else:
                 messages.error(request, 'Wrong Email or Password')
+
                 return redirect('/')
     else:    
         print(request.session.get('userData'))
