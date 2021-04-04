@@ -1,6 +1,14 @@
-{% extends 'landing/base.html' %} {% load static %} {% block title %}Home{% endblock title %} {% block leftSideImage %}
-<img src="{% static 'landing/svg/handshake.svg' %}" alt="hand shake image"> {% endblock leftSideImage %} {% block rightSideContent %}
-<h1 style="color: #030316;">--</h1>
+{% extends 'landing/base.html' %} 
+{% load static %} 
+
+{% block title %}Home{%endblock title %} 
+
+{% block leftSideImage %}
+    <img src="{% static 'landing/svg/handshake.svg' %}" alt="hand shake image" />
+{% endblock leftSideImage %} 
+
+{% block rightSideContent %}
+<h1 style="color: #030316">--</h1>
 <form action="" method="POST" class="needs-validation" novalidate>
     {% csrf_token %}
     <div class="mb-3">
@@ -15,14 +23,22 @@
     </div>
     <button type="submit" class="btn submit-btn">Login</button>
 </form>
-<br>
+<br />
 <div class="utility">
-    <a href="#">Forgot password?</a> <br>
-    <a href="#">Don't Have An Account? </a> <br>
-    <a href="signup/"><button type="button" class="btn">CREATE NEW ACCOUNT </button></a>
+    <a href="#">Forgot password?</a> <br />
+    <a href="#">Don't Have An Account? </a> <br />
+    <a href="signup/"><button type="button" class="btn">CREATE NEW ACCOUNT</button></a>
 </div>
-{% endblock rightSideContent %} {% block alertMessage %} {% if messages %} {% for mess in messages%} {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-<script>
-    swal('Error', '{{mess}}', 'error');
-</script>
-{% endif %} {% endfor %} {% endif %} {% endblock alertMessage %}
+{% endblock rightSideContent %} 
+
+{% block alertMessage %} 
+    {% if messages %} 
+        {% for mess in messages%} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <script>
+                    swal("Error", "{{mess}}", "error");
+                </script>
+            {% endif %} 
+        {% endfor %} 
+    {% endif %} 
+{% endblock alertMessage %}

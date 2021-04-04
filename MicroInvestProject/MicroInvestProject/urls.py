@@ -25,4 +25,5 @@ urlpatterns = [
     path('profile/',include("user.urls")), 
     path('', landingViews.showLandingPage), #Home Page
     path('signup/', landingViews.signUpPage),
+    path('logout/', landingViews.logout),
 ]

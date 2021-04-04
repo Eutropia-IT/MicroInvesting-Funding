@@ -1,34 +1,28 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-
 from user.models import User
 from django.db import IntegrityError
 from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 
 
 def showLandingPage(request):
-    if request.method == 'POST':
+    if 'login' in request.session:
+        return redirect('investor/dashboard/')
+    elif request.method == 'POST':
         useremail= request.POST.get('email')  
         userpassword = request.POST.get('password')
-        
-        try:
-            qs1 = User.objects.get(email=useremail)
-            try:
-                qs2 = User.objects.get(password=userpassword)
+        if useremail and userpassword:
+            getUser = User.objects.filter(email=useremail, password = userpassword)
+            if getUser:
+                request.session['login'] = True
+                request.session['userData'] = getUser[0].id
                 return redirect('investor/dashboard/')
-            except ObjectDoesNotExist as e:
-                if 'User matching query does not exist' in e.args[0]:
-                    messages.error(request, 'Wrong Email or Password', )
-                    return redirect('/')
-            except MultipleObjectsReturned:
-                return redirect('investor/dashboard/')
-                
-        except ObjectDoesNotExist as e:
-            if 'User matching query does not exist' in e.args[0]:
-                messages.error(request, 'Wrong Email or Password', )
+            else:
+                messages.error(request, 'Wrong Email or Password')
                 return redirect('/')
-    
-    return render(request, 'landing/index.html')
+    else:    
+        print(request.session.get('userData'))
+        return render(request, 'landing/index.html')
 
 
 def signUpPage(request):
@@ -56,7 +50,13 @@ def signUpPage(request):
                     messages.error(request, 'It seems that this NID or Email is already associated with another account', )
                     return redirect('/signup')
 
-            
-            
     else:
         return render(request, 'landing/signup.html')
+
+def logout(request):
+    try:
+        del request.session['login']
+        del request.session['userData']
+    except KeyError:
+        pass
+    return redirect('/')
