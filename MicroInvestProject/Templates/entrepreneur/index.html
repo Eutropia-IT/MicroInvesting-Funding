@@ -1,9 +1,9 @@
-{% extends 'investor/base.html' %}
+{% extends 'entrepreneur/base.html' %}
 {% load static %}
 
 
 
-{% block title %} {{uData.name}} {% endblock title %}  
+{% comment %} {% block title %} {{uData.name}} {% endblock title %}  
 {% block userEmail %} {{uData.email}} {% endblock userEmail %}
 {% block userCellNumver %} {{uData.cell}} {% endblock userCellNumver %}
 {% block userName %} {{uData.name}} {% endblock userName %}
@@ -44,4 +44,4 @@
         </div>
     </div>
 {% endblock editProfileModal %}
-    
+     {% endcomment %}

@@ -79,6 +79,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* modal */
+#exampleModal .mymodal{
+  background-color: #030316;
+}
 
 
 /* toggle switch */
@@ -145,3 +149,4 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+

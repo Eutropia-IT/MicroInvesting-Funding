@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: seashell;
+  }
+  body {
+    background-color: #030316;
+  }
+  h1,
+  h2 {
+    color: #ffb93e;
+  }
+
+  #applyContainer{
+     margin-top: 9rem;
+  }

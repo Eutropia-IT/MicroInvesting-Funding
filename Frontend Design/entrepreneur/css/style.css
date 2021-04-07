@@ -1,4 +1,4 @@
-/* user css */
+/* enterpretor css */
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +47,7 @@ h2 {
 }
 .main-content .left-side {
   grid-column: 1/9;
-  margin-left: 6rem;
+  margin-left: 2rem;
   display: flex;
 }
 .main-content .left-side .profile-pic img {
@@ -66,11 +66,10 @@ h2 {
 .main-content .left-side .intro-box img {
   width: 270px;
   height: 230px;
-  margin: -140px 0 0 500px;
+  margin: -50px 0 0 500px;
 }
 .main-content .line {
   grid-column: 9/10;
-  margin-left: 400px;
 }
 .main-content .line img {
   height: 35rem;
@@ -115,7 +114,6 @@ h2 {
   margin-top: -300px;
   width: 60rem;
   height: 12rem;
-  margin-left: 6rem;
 }
 .main-content .balance-ctrl .t-balance {
   grid-area: "t-balance";
@@ -150,15 +148,6 @@ h2 {
   color: #ffb93e;
   font-weight: bolder;
 }
-
-/* modal */
-#editProfileModal .mymodal__content{
-  background-color: #030316;
-}
-#editProfileModal .mymodal__content form input{
-  color: seashell;
-}
-
 
 /* project summary */
 .project-box{
@@ -267,3 +256,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
+
+

@@ -12,9 +12,13 @@
     <!-- Boostrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <!-- css link -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -31,7 +35,7 @@
                     <span class="slider round"></span>
                 </label>
             </a> -->
-            
+
             <li><a href="#"><img src="images/logout.png" alt="" srcset=""></a></li>
         </div>
     </div>
@@ -61,28 +65,63 @@
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
-            </thead>
-            <!-- <tfoot>
-                <tr>
-                    <th>Project Id</th>
-                    <th>Project Name</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </tfoot> -->
             <tbody>
                 <tr>
-                    <td>01</td>
+                    <td class="nr">01</td>
                     <td>Gulistan Food cort</td>
                     <td>12-2-2020</td>
                     <td>20000</td>
                     <td>Approve</td>
-                    <td><a href="#"><i class="fas fa-highlighter"></i></a></td>
+                    <td data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-highlighter use-address"></i></td>
+                </tr>
+                <tr>
+                    <td class="nr">02</td>
+                    <td>Gulistan Food cort</td>
+                    <td>12-2-2020</td>
+                    <td>20000</td>
+                    <td>Approve</td>
+                    <td data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-highlighter use-address"></i></td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- modal -->
+    <!-- Button trigger modal -->
+    <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content mymodal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <input type="number" class="form-control" id="project__ID" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -90,7 +129,7 @@
     <!-- Boostrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="js/assets/jquery.min.js"></script>
@@ -98,12 +137,23 @@
     <!-- Page level plugin JavaScript-->
     <script src="js/assets/jquery.datatables.min.js"></script>
 
+
+
     <script src="js/assets/datatables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#dataTable').DataTable();
         });
     </script>
+    <!-- <script>
+        $(".use-address").click(function () {
+            var $row = $(this).closest("tr");    // Find the row
+            var $text = $row.find(".nr").text(); // Find the text
+
+            // Let's test it out
+            alert($text);
+        });
+    </script> -->
 </body>
 
 </html>

@@ -10,7 +10,7 @@ body {
 }
 h1,
 h2 {
-  color: #ffb93e;
+  color: #ffb83e;
 }
 
 /* top nav bar */
@@ -111,10 +111,9 @@ h2 {
 }
 .main-content .balance-ctrl {
   grid-column: 2/9;
-  grid-row: 2/2;
   margin-top: -300px;
   width: 60rem;
-  height: 12rem;
+  height: 7rem;
   margin-left: 6rem;
 }
 .main-content .balance-ctrl .t-balance {
@@ -139,16 +138,18 @@ h2 {
   margin-left: 15px;
   width: 12rem;
 }
-.main-content .balance-ctrl li a {
+.main-content .balance-ctrl li i {
   font-size: 1.5rem;
   margin-right:20px;
+  margin-top: 20px;
   background-color: #3d3d4c;
-  padding: 0.2rem;
+  padding: 0.5rem;
   border-radius: 1rem;
   width: 6.5rem;
   text-align: center;
   color: #ffb93e;
   font-weight: bolder;
+  font-size: large;
 }
 
 /* modal */
@@ -262,6 +263,7 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  transform: rotateY(180deg);
 }
 
 .slider.round:before {
