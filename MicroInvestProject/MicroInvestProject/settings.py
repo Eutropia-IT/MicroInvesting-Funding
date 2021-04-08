@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'user',
     'entrepreneur',
     'investor',
-    'analyst'
+    'analyst',
+    'projects',
 ]
 
 MIDDLEWARE = [

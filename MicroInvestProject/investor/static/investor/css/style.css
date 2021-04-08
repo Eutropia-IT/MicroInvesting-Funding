@@ -160,41 +160,34 @@ h2 {
 }
 
 
-/* project summary */
-.project-box{
-  margin: 0 5%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  
+/* project slider */
+.splide{
+  margin: 0 65px;
 }
-.project-box h1{
-  grid-column: 1/-1;
-}
-.project-box .project-title{
-  margin-bottom: 1rem;
-}
-.project-box .project01,.project02,.project03{
+.project{
   background-color: #171726;
-  width: 550px;
-  height: 220px;
   border-radius: 3%;
   padding: 1%;
-  margin: 0.5rem;
+  width: 35rem;
+  height: 11rem;
 }
-.project-box .indecator{
-  margin: -73px 0 0px 384px;
-  text-align: center;
+.project .indecator{
+  margin-top: -100px;
+  margin-left: 400px;
 }
-.project-box .indecator label{
+.project .indecator label{
   text-shadow:1px 1px 0 #444;
   width: 30px;
   height: 30px;
   color: seashell;
   font-weight: bolder;
   border-radius: 10%;
+  text-align: center;
+  left: 4rem;
+  position: relative;
 }
-.project-box .indecator button{
-  background-image: linear-gradient(#FFF6BC, #FF8A00);
+.project .indecator button{
+    background-image: linear-gradient(#FFF6BC, #FF8A00);
     height: 2.3rem;
     text-transform: uppercase;
     font-weight: bold;

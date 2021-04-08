@@ -12,6 +12,8 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <!-- css link -->
     <link rel="stylesheet" href="{% static 'investor/css/style.css' %}">
+    <!-- Slider js css-->
+    <link rel="stylesheet" href="{% static 'investor/css/splide.min.css' %}" />
     <!-- font awesom -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- jani na -->
@@ -113,44 +115,77 @@
         </div>
     </div>
     <!-- project -->
-    <div class="project-box">
+    <div class="splide">
+      <div class="splide__track">
         <h1>FEATURED PROJECTS</h1>
-        <div class="project01">
-            <div class="display-6 project-title">Shyamoli Food Cart</div>
-            <li>Total Budget: 50000</li>
-            <li>Invest Up To : 45000</li>
-            <li>Number Of Investors: 5</li>
-            <div class="indecator">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
                 <label for="reating">5.5</label>
-                <input type="hidden" value="4">
+                <input type="hidden" value="4" />
                 <p>Profit Card Indicator</p>
                 <button type="submit" class="btn">Details</button>
+              </div>
             </div>
-        </div>
-        <div class="project02">
-            <div class="display-6 project-title">Gulistan Food Cart</div>
-            <li>Total Budget: 50000</li>
-            <li>Invest Up To : 45000</li>
-            <li>Number Of Investors: 5</li>
-            <div class="indecator">
-                <label for="reating">5.0</label>
-                <input type="hidden" value="7">
-                <p>Profit Card Indicator</p>
-                <button type="submit" class="btn">Details</button>
-            </div>
-        </div>
-        <div class="project03">
-            <div class="display-6 project-title">Farmget Food Cart</div>
-            <li>Total Budget: 50000</li>
-            <li>Invest Up To : 45000</li>
-            <li>Number Of Investors: 5</li>
-            <div class="indecator">
+          </li>
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
                 <label for="reating">5.5</label>
-                <input type="hidden" value="8">
+                <input type="hidden" value="4" />
                 <p>Profit Card Indicator</p>
                 <button type="submit" class="btn">Details</button>
+              </div>
             </div>
-        </div>
+          </li>
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
+                <label for="reating">5.5</label>
+                <input type="hidden" value="4" />
+                <p>Profit Card Indicator</p>
+                <button type="submit" class="btn">Details</button>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
+                <label for="reating">5.5</label>
+                <input type="hidden" value="4" />
+                <p>Profit Card Indicator</p>
+                <button type="submit" class="btn">Details</button>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
     </div>
 
     <!-- Edit Profile Modal -->
@@ -161,6 +196,16 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
     <script src="{% static 'investor/js/index.js' %}"></script>
+    <!-- Slider js -->
+    <script src="{% static 'investor/js/splide.min.js' %}"></script>
+    <script>
+      new Splide(".splide", {
+        rewind : true,
+        type   : 'loop',
+	    perPage: 3,
+        autoplay: true,
+      }).mount();
+    </script>
 </body>
 
 </html>

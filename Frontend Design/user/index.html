@@ -1,154 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User-Al Amin</title>
-    
+
     <!-- Boostrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
     <!-- css link -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Slider js css-->
+    <link rel="stylesheet" href="css/splide.min.css" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script> -->
+  </head>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-</head>
-
-<body>
-
+  <body>
     <!-- top nav bar -->
     <div class="top-navber">
-        <h1>MICRO INVESTING & FUNDING</h1>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">View Full History</a></li>
-            <li><a href="#">Explore</a></li>
-        </ul>
-        <div class="controller">
-            <a href="">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </a>
-            <li><a href="#">Switch To Entrepreneurship Mode</a></li>
-            <li><a href="#"><img src="images/logout.png" alt="" srcset=""></a></li>
-        </div>
+      <h1>MICRO INVESTING & FUNDING</h1>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">View Full History</a></li>
+        <li><a href="#">Explore</a></li>
+      </ul>
+      <div class="controller">
+        <a href="">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </a>
+        <li><a href="#">Switch To Entrepreneurship Mode</a></li>
+        <li>
+          <a href="#"><img src="images/logout.png" alt="" srcset="" /></a>
+        </li>
+      </div>
     </div>
     <!-- main content -->
     <div class="main-content">
-        <div class="left-side">
-            <div class="profile-pic">
-                <img src="images/FB_IMG_1591825027717.jpg" alt="profileImage">
-            </div>
-            <div class="intro-box">
-                <h2>Welcome back Mikasa Ackerman!</h2>
-                <img src="svg/intro-box.svg" alt="intro-box">
-            </div>
+      <div class="left-side">
+        <div class="profile-pic">
+          <img src="images/FB_IMG_1591825027717.jpg" alt="profileImage" />
         </div>
-        <div class="line">
-            <img src="svg/line.svg" alt="">
+        <div class="intro-box">
+          <h2>Welcome back Mikasa Ackerman!</h2>
+          <img src="svg/intro-box.svg" alt="intro-box" />
         </div>
-        <div class="right-side">
-            <div class="display-4 text-center" style="color: #ffb93e;">Site Overview</div>
-            <ul>
-                <li>
-                    <img src="images/leader.png" alt="">
-                    <h5>TOTAL MEMBERS</h5>
-                    <p>3510</p>
-                </li>
-                <li>
-                    <img src="images/leader.png" alt="">
-                    <h5>TOTAL INVESTORS</h5>
-                    <p>3510</p>
-                </li>
-                <li>
-                    <img src="images/project-management.png" alt="">
-                    <h5>TOTAL PROJECTS</h5>
-                    <p>3510</p>
-                </li>
-                <li>
-                    <img src="images/investing.png" alt="">
-                    <h5>TOTAL INVESTMENT</h5>
-                    <p>3510</p>
-                </li>
-                <li>
-                    <img src="images/Filled outline.png" alt="">
-                    <h5>TOTAL RETURN</h5>
-                    <p>3510</p>
-                </li>
-            </ul>
+      </div>
+      <div class="line">
+        <img src="svg/line.svg" alt="" />
+      </div>
+      <div class="right-side">
+        <div class="display-4 text-center" style="color: #ffb93e">
+          Site Overview
         </div>
-        <div class="balance-ctrl">
-            <li class="t-balance">
-                <img src="images/11420438181578889032.png" alt="">
-                <h5>TOTAL BALANCE 35500</h5>
-                <a href=""><img src="images/plus.png" alt=""></a>
-            </li>
-            <li class="t-invest">
-                <img src="images/11420438181578889032.png" alt="">
-                <h5>TOTAL INVESTED 22000</h5>
-            </li>
-            <li class="withdraw-bal">
-                <img src="images/withdrawal icon_3700442.png" alt="">
-                <h5>WITHDRAW BALANCE</h5>
-                <a href=""><img src="images/minus.png" alt=""></a>
-            </li>
-            <li class="t-profit">
-                <img src="images/profit(1).png" alt="">
-                <h5>TOTAL PROFIT (ALL TIME) 13500</h5>
-            </li>
-        </div>
+        <ul>
+          <li>
+            <img src="images/leader.png" alt="" />
+            <h5>TOTAL MEMBERS</h5>
+            <p>3510</p>
+          </li>
+          <li>
+            <img src="images/leader.png" alt="" />
+            <h5>TOTAL INVESTORS</h5>
+            <p>3510</p>
+          </li>
+          <li>
+            <img src="images/project-management.png" alt="" />
+            <h5>TOTAL PROJECTS</h5>
+            <p>3510</p>
+          </li>
+          <li>
+            <img src="images/investing.png" alt="" />
+            <h5>TOTAL INVESTMENT</h5>
+            <p>3510</p>
+          </li>
+          <li>
+            <img src="images/Filled outline.png" alt="" />
+            <h5>TOTAL RETURN</h5>
+            <p>3510</p>
+          </li>
+        </ul>
+      </div>
+      <div class="balance-ctrl">
+        <li class="t-balance">
+          <img src="images/11420438181578889032.png" alt="" />
+          <h5>TOTAL BALANCE 35500</h5>
+          <a href=""><img src="images/plus.png" alt="" /></a>
+        </li>
+        <li class="t-invest">
+          <img src="images/11420438181578889032.png" alt="" />
+          <h5>TOTAL INVESTED 22000</h5>
+        </li>
+        <li class="withdraw-bal">
+          <img src="images/withdrawal icon_3700442.png" alt="" />
+          <h5>WITHDRAW BALANCE</h5>
+          <a href=""><img src="images/minus.png" alt="" /></a>
+        </li>
+        <li class="t-profit">
+          <img src="images/profit(1).png" alt="" />
+          <h5>TOTAL PROFIT (ALL TIME) 13500</h5>
+        </li>
+      </div>
     </div>
     <!-- project     -->
-    <div class="project-box">
+    <div class="splide">
+      <div class="splide__track">
         <h1>FEATURED PROJECTS</h1>
-        <div class="project01">
-            <div class="display-6 project-title">Shyamoli Food Cart</div>
-            <li>Total Budget: 50000</li>
-            <li>Invest Up To : 45000</li>
-            <li>Number Of Investors: 5</li>
-            <div class="indecator">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
                 <label for="reating">5.5</label>
-                <input type="hidden" value="4">
+                <input type="hidden" value="4" />
                 <p>Profit Card Indicator</p>
                 <button type="submit" class="btn">Details</button>
+              </div>
             </div>
-        </div>
-        <div class="project02">
-            <div class="display-6 project-title">Gulistan Food Cart</div>
-            <li>Total Budget: 50000</li>
-            <li>Invest Up To : 45000</li>
-            <li>Number Of Investors: 5</li>
-            <div class="indecator">
-                <label for="reating">5.0</label>
-                <input type="hidden" value="7">
-                <p>Profit Card Indicator</p>
-                <button type="submit" class="btn">Details</button>
-            </div>
-        </div>
-        <div class="project03">
-            <div class="display-6 project-title">Farmget Food Cart</div>
-            <li>Total Budget: 50000</li>
-            <li>Invest Up To : 45000</li>
-            <li>Number Of Investors: 5</li>
-            <div class="indecator">
+          </li>
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
                 <label for="reating">5.5</label>
-                <input type="hidden" value="8">
+                <input type="hidden" value="4" />
                 <p>Profit Card Indicator</p>
                 <button type="submit" class="btn">Details</button>
+              </div>
             </div>
-        </div>
+          </li>
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
+                <label for="reating">5.5</label>
+                <input type="hidden" value="4" />
+                <p>Profit Card Indicator</p>
+                <button type="submit" class="btn">Details</button>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 project__title">Shyamoli Food Cart</div>
+              <ul>
+                <li>Total Budget: 50000</li>
+                <li>Invest Up To : 45000</li>
+                <li>Number Of Investors: 5</li>
+              </ul>
+              <div class="indecator">
+                <label for="reating">5.5</label>
+                <input type="hidden" value="4" />
+                <p>Profit Card Indicator</p>
+                <button type="submit" class="btn">Details</button>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
     </div>
 
     <!-- Boostrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <!-- js -->
     <script src="js/index.js"></script>
-</body>
-
+    <!-- Slider js -->
+    <script src="js/splide.min.js"></script>
+    <script>
+      new Splide(".splide", {
+        rewind : true,
+        type   : 'loop',
+	    perPage: 3,
+        autoplay: true,
+      }).mount();
+    </script>
+  </body>
 </html>

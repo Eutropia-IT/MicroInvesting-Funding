@@ -149,8 +149,8 @@ h2 {
   font-weight: bolder;
 }
 
-/* project summary */
-.project-box{
+/* project Slider */
+/* .project-box{
   margin: 0 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -191,8 +191,44 @@ h2 {
     color: #030316;
     cursor: pointer;
     transition-duration: 0.4s;
-}
+} */
 
+/* project slider */
+.splide{
+  margin: 0 65px;
+}
+.project{
+  background-color: #171726;
+  border-radius: 3%;
+  padding: 1%;
+  width: 35rem;
+  height: 11rem;
+}
+.project .indecator{
+  margin-top: -100px;
+  margin-left: 400px;
+}
+.project .indecator label{
+  text-shadow:1px 1px 0 #444;
+  width: 30px;
+  height: 30px;
+  color: seashell;
+  font-weight: bolder;
+  border-radius: 10%;
+  text-align: center;
+  left: 4rem;
+  position: relative;
+}
+.project .indecator button{
+    background-image: linear-gradient(#FFF6BC, #FF8A00);
+    height: 2.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #030316;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
 /* toggle switch */
 /* The switch - the box around the slider */
 .switch {
