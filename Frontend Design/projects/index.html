@@ -211,18 +211,18 @@
 					<div class="row">
 						<div class="col-md-12"></div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart" data-percent="95">
-								<span><strong>HTML5</strong>95%</span>
+							<div class="chart myChart" data-percent="100">
+								<span><strong>HTML5</strong> <br> <br> <br> <span class="showValue">62%</span> </span>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart" data-percent="93">
-								<span><strong>CSS3</strong>93%</span>
+							<div class="chart myChart" data-percent="93">
+								<span><strong>CSS3</strong> <br> <br> <br> <span class="showValue">62%</span> </span>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart" data-percent="97">
-								<span><strong>JavaScript</strong>97%</span>
+							<div class="chart myChart" data-percent="97">
+								<span><strong>JavaScript</strong> <br> <br> <br> <span class="showValue">62%</span> </span>
 							</div>
 						</div>
 					</div>
@@ -233,8 +233,19 @@
 				<div class="fh5co-content-inner">
 					<div class="row">
 						<div class="col-md-12">
-							...
+							<p>Your Corrent Balance:</p> <div class="display-2">0.0 TK</div>
+							<form method="">
+								<input type="hidden" name="investorID" value="1234">
+								<input type="hidden" name="projectID" value="1">
+								<!-- <input type="hidden" name="applyDate" value=""> -->
+								<div class="mb-3">
+								  <label for="amount" class="form-label">Enter Your Amount</label>
+								  <input type="number" name="amount" step="any" class="form-control bg-transparent text-white" id="amount">
+								</div>
+								<button type="submit" class="btn btn-success bg-transparent border-success">Apply</button>
+							</form>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -266,6 +277,8 @@
 	<script src="js/jquery.easypiechart.min.js"></script>
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+	<!-- set reating value -->
+	<script src="js/index.js"></script>
 </body>
 
 </html>

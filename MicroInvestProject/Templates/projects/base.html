@@ -77,30 +77,21 @@
 								<img src="{% static 'projects/images/FB_IMG_1591825027717.png' %}"
 									alt="Free HTML5 Wesbite Template by FreeHTML5.co" />
 							</figure>
-							<h1>Al Amin</h1>
+							<h1> {% block userName %} {% endblock userName %} </h1>
 							<div class="row">
 								<div class="col-md-12 fh5co-counter">
-									<div class="fh5co-number fh5co-left">6</div>
+									<div id="projectReating" class="fh5co-number fh5co-left">{% block projReating %} {% endblock projReating %}</div>
 									<div class="fh5co-text">
-										<h3 class="border-bottom">
-											Project Tile
+										<h3 class="border-bottom text-capitalize">
+											{% block projTile %} {% endblock projTile %}
 										</h3>
-										<p>Dhaka</p>
+										<p class="text-capitalize"> {% block projLcation %} {% endblock projLcation %} </p>
 									</div>
 								</div>
 							</div>
 							<p>
-								Video gaming and codding is my passion. But when I codding for
-								any project/ideas/problem solving it's very difficult to focus
-								on any other task. In short, if I share my little experience
-								of my life that I was doing code 18hrs without any kind of
-								brack.
-								<br />
-								Now let's focus on my skills. Actually, I would like to
-								convert any ideas to a web application. For this reason at the
-								begging of time, I only work for the back end side of an
-								application. Side by side also works for the design part of an
-								application.
+								{% block projDescription %} {% endblock projDescription %}
+								
 							</p>
 						</div>
 					</div>
@@ -117,7 +108,7 @@
 								</div>
 								<div class="fh5co-text">
 									<h2>Project Budget</h2>
-									<small>2022 TK</small><br />
+									<small>{% block projBudegect %} {% endblock projBudegect %} TK</small><br />
 									<p></p>
 								</div>
 							</div>
@@ -129,7 +120,7 @@
 								</div>
 								<div class="fh5co-text">
 									<h2>Fund Raised</h2>
-									<small>2022 TK</small><br />
+									<small>{% block projRaised %} {% endblock projRaised %} TK</small><br />
 									<p></p>
 								</div>
 							</div>
@@ -141,7 +132,7 @@
 								</div>
 								<div class="fh5co-text">
 									<h2>Number Of Investors</h2>
-									<small>5</small><br />
+									<small>{% block numOfInvastor %} {% endblock numOfInvastor %} </small><br />
 									<p></p>
 								</div>
 							</div>
@@ -153,7 +144,7 @@
 								</div>
 								<div class="fh5co-text">
 									<h2>You Can Invest Up To</h2>
-									<small>2000 TK</small><br />
+									<small>{% block avalibeInvest %} {% endblock avalibeInvest %} TK</small><br />
 									<p></p>
 								</div>
 							</div>
@@ -173,8 +164,8 @@
 									<i class="icon-black-tie"></i>
 								</div>
 								<div class="fh5co-text">
-									<h2>Al Amin</h2>
 									<small>Good goog very good. best of luck.</small>
+									<h2>Al Amin</h2>
 									<p>Co-Founder & CEO</p>
 								</div>
 							</div>
@@ -184,8 +175,8 @@
 									<i class="icon-black-tie"></i>
 								</div>
 								<div class="fh5co-text">
-									<h2>Al Amin</h2>
 									<small>Good goog very good. best of luck.</small>
+									<h2>Mirza MD Shakil</h2>
 									<p>Co-Founder & CEO</p>
 								</div>
 							</div>
@@ -195,9 +186,11 @@
 									<i class="icon-black-tie"></i>
 								</div>
 								<div class="fh5co-text">
-									<h2>Al Amin</h2>
+									
 									<small>Good goog very good. best of luck.</small>
+									<h2>Thamid Anam</h2>
 									<p>Co-Founder & CEO</p>
+									
 								</div>
 							</div>
 						</div>
@@ -210,18 +203,18 @@
 					<div class="row">
 						<div class="col-md-12"></div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart" data-percent="95">
-								<span><strong>HTML5</strong>95%</span>
+							<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator1}}">
+								<span><strong>1st Analyst</strong> <br/><br/><br/> <span class="showValue">62%</span> </span>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart" data-percent="93">
-								<span><strong>CSS3</strong>93%</span>
+							<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator2}}">
+								<span><strong>2nd Analyst</strong> <br/><br/><br/> <span class="showValue">62%</span> </span>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart" data-percent="97">
-								<span><strong>JavaScript</strong>97%</span>
+							<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator3}}">
+								<span><strong>3rd Analyst</strong> <br/><br/><br/> <span class="showValue">62%</span> </span>
 							</div>
 						</div>
 					</div>
@@ -232,7 +225,17 @@
 				<div class="fh5co-content-inner">
 					<div class="row">
 						<div class="col-md-12">
-							...
+							<p>Your Corrent Balance:</p> <div class="display-2">0.0 TK</div>
+							<form method="">
+								<input type="hidden" name="investorID" value="1234">
+								<input type="hidden" name="projectID" value="1">
+								<!-- <input type="hidden" name="applyDate" value=""> -->
+								<div class="mb-3">
+								  <label for="amount" class="form-label">Enter Your Amount</label>
+								  <input type="number" name="amount" step="any" class="form-control bg-transparent text-white" id="amount">
+								</div>
+								<button type="submit" class="btn btn-success bg-transparent border-success">Apply</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -248,6 +251,8 @@
 							<a href="https://www.facebook.com/almin.cont" target="_blank">Al Amin</a>
 							Mobile <a href="" target="_blank">01515620108</a></span>
 					</small>
+					<br/>
+					<a href="/investor/dashboard"><i class="fas fa-long-arrow-alt-left fst-italic"> Back</i></a>
 				</div>
 			</div>
 		</footer>

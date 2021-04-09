@@ -24,6 +24,7 @@ urlpatterns = [
     path('entrepreneur/',include("entrepreneur.urls")),
     path('profile/',include("user.urls")),
     path('project/',include("projects.urls")),
+    path('payment/',include("transection.urls")),
     path('', landingViews.showLandingPage), #Home Page
     path('signup/', landingViews.signUpPage),
     path('logout/', landingViews.logout),

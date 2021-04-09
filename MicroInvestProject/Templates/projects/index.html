@@ -1,2 +1,13 @@
 {% extends 'projects/base.html' %} 
 {% load static %}
+
+{% block userName %} {{selectedProject.entr_ID.name}} {% endblock userName %}
+{% block projTile %} {{selectedProject.proj_Name}} {% endblock projTile %}
+{% block projReating %} {{selectedProject.profit_Indicator1}}{{','}}{{selectedProject.profit_Indicator2}}{{','}}{{selectedProject.profit_Indicator3}} {% endblock projReating %}
+{% block projLcation %} {{selectedProject.proj_Location}} {% endblock projLcation %}
+{% block projDescription %} {{'Bogor bogor'}} {% endblock projDescription %}
+
+{% block projBudegect %} {{selectedProject.proj_Budget}} {% endblock projBudegect %}
+{% block projRaised %} {{selectedProject.proj_Budget}} {{'-'}} {{selectedProject.proj_Funded}} {% endblock projRaised %} 
+{% block numOfInvastor %} {{'calcutating...'}} {% endblock numOfInvastor %}
+{% block avalibeInvest %} {{'data pai nai...'}} {% endblock avalibeInvest %}

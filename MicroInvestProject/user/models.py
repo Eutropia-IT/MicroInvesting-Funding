@@ -29,7 +29,7 @@ class Transaction(models.Model):
     ]
     trans_type = models.TextField(choices=options)
     user_ID = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    amount = models.FloatField()
+    amount = models.FloatField(default=0.0)
     transactionDate = models.DateTimeField(default=datetime.now)
     def __str__(self):
         return '%s' % (self.user_ID)

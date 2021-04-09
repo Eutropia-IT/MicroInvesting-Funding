@@ -93,3 +93,18 @@
 
 
 }());
+
+// dynatic data text
+let pReating = document.getElementById('projectReating');
+let sR = pReating.textContent.split(',')
+pReating.textContent = ((sR[0]*1 + sR[1]*1 + sR[2]*1)/3).toFixed(1)
+
+
+let x = document.querySelectorAll('.myChart');
+let y= document.querySelectorAll('.myChart .showValue')
+
+
+for( let i=0; i< x.length; i++){
+    y[i].textContent = x[i].getAttribute('data-percent')
+	x[i].setAttribute('data-percent', x[i].getAttribute('data-percent')*10) 
+}

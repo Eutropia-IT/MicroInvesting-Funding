@@ -2,12 +2,15 @@ from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from user.models import User
+from entrepreneur.models import Projects
 
 def showDashboardPage(request):
     try:
         if 'login' in request.session:
-            userData = User.objects.get(id = request.session.get('userID'))
-            return render(request, 'analyst/index.html', {'userData' : userData})
+            content = { 'userData' :User.objects.get(id = request.session.get('userID')) }
+
+            print(Projects.objects.all())
+            return render(request, 'analyst/index.html', content)
         else:
             messages.error(request, 'Please Login at First')
             return redirect('/') #return to home page cz of without login

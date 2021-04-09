@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'investor',
     'analyst',
     'projects',
+    'transection'
 ]
 
 MIDDLEWARE = [

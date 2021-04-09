@@ -7,7 +7,7 @@
 {% block userEmail %} {{uData.email}} {% endblock userEmail %}
 {% block userCellNumver %} {{uData.cell}} {% endblock userCellNumver %}
 {% block userName %} {{uData.name}} {% endblock userName %}
-{% block userBalance %} Calculation... {% endblock userBalance %}
+{% block userBalance %} {{uData.totalInvested}}{{','}}{{uData.totalWithdrawn}} {% endblock userBalance %}
 {% block userTotalInvest %} {{uData.totalInvested}} {% endblock userTotalInvest %}
 {% block userAllTimeProfit %} Calculation... {% endblock userAllTimeProfit %}
 
@@ -20,28 +20,78 @@
                         <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="">
-                    <div class="modal-body ">
+                <div class="modal-body ">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+
                         <div class="input-group flex-nowrap mb-3">
                             <span class="input-group-text bg-transparent" id="addon-wrapping"><i class="fas fa-envelope"></i></span>
-                            <input type="email" class="form-control bg-transparent" placeholder="Email" value="{{uData.email}}" required>
+                            <input type="email" name="email" class="form-control bg-transparent" placeholder="Email" value="{{uData.email}}" required>
                         </div>
-                            <div class="input-group flex-nowrap mb-3">
-                                <span class="input-group-text bg-transparent" id="addon-wrapping"> <i class="fas fa-mobile-alt">  </i></span>
-                                <input type="text" class="form-control bg-transparent" placeholder="Mobile" value="{{uData.cell}}"  required>
-                            </div> 
-                            <div class="input-group flex-nowrap mb-3">
-                                <span class="input-group-text bg-transparent" id="addon-wrapping"><i class="fas fa-unlock-alt"></i></span>
-                                <input type="password" class="form-control bg-transparent" placeholder="Password">
-                            </div>               
+
+                        <div class="input-group flex-nowrap mb-3">
+                            <span class="input-group-text bg-transparent" id="addon-wrapping"> <i class="fas fa-mobile-alt">  </i></span>
+                            <input type="text" name="cell" class="form-control bg-transparent" placeholder="Mobile" value="{{uData.cell}}"  required>
+                        </div> 
+
+                        <div class="input-group flex-nowrap mb-3">
+                             <span class="input-group-text bg-transparent" id="pass"><i class="fas fa-unlock-alt"></i></span>
+                            <input type="password" name="password" id="pass" class="form-control bg-transparent"  placeholder="Password" required>
                         </div>
+                        <div class="input-group flex-nowrap mb-3">
+                             <span class="input-group-text bg-transparent" id="cPass"><i class="fas fa-unlock-alt"></i></span>
+                            <input type="password" name="cPassword" id="cPass" class="form-control bg-transparent"  placeholder="Change Password">
+                        </div> 
+                        <small class="text-warning">If You want only change password then type change password. <br/> Otherwise you may leave it.<small/>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger bg-transparent text-white" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-success bg-transparent text-white">Save changes</button>
+                            <button type="submit"  class="btn btn-success bg-transparent text-white">Save changes</button>
                         </div>
-                </form>
+                    </form>
+                </div>
+                    
             </div>
         </div>
     </div>
 {% endblock editProfileModal %}
-    
+
+{% block projectList %} 
+    {% for pList in projList %}
+        <li class="splide__slide">
+            <div class="project">
+              <div class="display-6 text-capitalize project__title"> {{pList.proj_Name}} </div>
+              <ul>
+                <li>Total Budget: {{pList.proj_Budget}}</li>
+                <li>Invest Up To : {{pList.proj_Funded}}</li>
+                <li>Number Of Investors: {{'calculationg...'}} </li>
+              </ul>
+              <div class="indecator">
+                <label for="reating"> 50 </label>
+                <input type="hidden" value="{{pList.profit_Indicator1}}{{','}}{{pList.profit_Indicator2}}{{','}}{{pList.profit_Indicator3}}" />
+                <p>Profit Card Indicator</p>
+                <a href="/project/{{pList.id}}">
+                  <button type="submit" class="btn">Details</button>
+                </a>
+              </div>
+            </div>
+        </li>
+    {% endfor %}
+{% endblock projectList %}
+
+{% block alertMessage %} 
+    {% if messages %} 
+        {% for mess in messages%} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <script>
+                    swal("Error", "{{mess}}", "error");
+                </script>
+            {% endif %} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <script>
+                    swal("Success", "{{mess}}", "success");
+                </script>
+            {% endif %} 
+        {% endfor %} 
+    {% endif %} 
+{% endblock alertMessage %}
+
