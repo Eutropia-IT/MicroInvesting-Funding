@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {% block title %}{% endblock title %} </title>
+    <!-- Sweet Alart JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Page level plugin style-->
     <link href="{% static 'analyst/js/assets/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'analyst/js/assets/datatables.bootstrap4.min.css' %}" rel="stylesheet">
@@ -65,25 +67,8 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <!-- <tfoot>
-                <tr>
-                    <th>Project Id</th>
-                    <th>Project Name</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </tfoot> -->
             <tbody>
-                <tr>
-                    <td>01</td>
-                    <td>Gulistan Food cort</td>
-                    <td>12-2-2020</td>
-                    <td>20000</td>
-                    <td>Approve</td>
-                    <td><a href="#"><i class="fas fa-highlighter"></i></a></td>
-                </tr>
+                {% block projectTable %}{% endblock projectTable %}
             </tbody>
         </table>
     </div>
@@ -107,6 +92,8 @@
             $('#dataTable').DataTable();
         });
     </script>
+    <!-- Sweet Alart Message script -->
+    {% block alertMessage %}{% endblock alertMessage %}
 </body>
 
 </html>

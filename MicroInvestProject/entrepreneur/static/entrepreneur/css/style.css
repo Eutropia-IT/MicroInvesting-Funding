@@ -29,6 +29,9 @@ h2 {
   text-decoration: none;
   padding: 0 10px;
 }
+.top-navber .controller{
+  margin-left: 150px;
+}
 .top-navber .controller li {
   display: inline-block;
 }

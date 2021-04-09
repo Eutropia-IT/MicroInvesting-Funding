@@ -17,6 +17,8 @@ class ProjectsModelAdmin(admin.ModelAdmin):
         "feedback1", 
         "feedback2",
         "feedback3",
+        "proj_details",
+        "proj_status",
         "applyDate",      
     )
 admin.site.register(Projects,ProjectsModelAdmin)

@@ -3,3 +3,34 @@
 
 {% block title %} {{userData.name}} {% endblock title %}
 {% block userName %} {{userData.name}} {% endblock userName %}
+
+
+{% block projectTable %}
+    {% for pTabData in projLIst %}
+       <tr>
+            <td>{{pTabData.id}}</td>
+            <td>{{pTabData.proj_Name}}</td>
+            <td>{{pTabData.applyDate}}</td>
+            <td>{{pTabData.proj_Budget}}</td>
+            <td>{{pTabData.proj_status}}</td>
+            <td><a href="/project/{{pTabData.id}}"><i class="fas fa-highlighter"></i></a></td>
+        </tr>
+    {% endfor %}
+{% endblock projectTable %}
+
+{% block alertMessage %} 
+    {% if messages %} 
+        {% for mess in messages%} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <script>
+                    swal("Error", "{{mess}}", "error");
+                </script>
+            {% endif %} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <script>
+                    swal("Success", "{{mess}}", "success");
+                </script>
+            {% endif %} 
+        {% endfor %} 
+    {% endif %} 
+{% endblock alertMessage %}

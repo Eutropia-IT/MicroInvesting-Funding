@@ -22,7 +22,8 @@
         <div class="row">
             
             <div class="col my-auto">
-                <form action="">
+                <form action="" method="POST">
+                    {% csrf_token %}
                     <div class="mb-3">
                         <input type="text" class="form-control" name="projrctName" id="projrctName"
                             placeholder="Project Name" required>
@@ -47,6 +48,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

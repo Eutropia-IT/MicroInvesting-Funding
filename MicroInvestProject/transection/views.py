@@ -11,12 +11,11 @@ def addBalance(request):
             
             if request.method == 'POST':
                 if request.POST.get('amount'):
-                    #userData.totalInvested = userData.totalInvested + float(request.POST.get('amount'))
-                    #userData.save()
-                    #Transaction().user_ID_id = User()
-                    Transaction().amount = 500.00
-                    Transaction().trans_type = 'deposit'
-                    Transaction().save()
+                    transectionTable = Transaction()
+                    transectionTable.trans_type = 'deposit'
+                    transectionTable.user_ID = User.objects.get(id= request.session.get('userID'))
+                    transectionTable.amount = request.POST.get('amount')
+                    transectionTable.save()
                     messages.success(request, 'Successfully Transection.')
                     return redirect('/investor/dashboard')
             return render(request, 'transection/addBalance.html')

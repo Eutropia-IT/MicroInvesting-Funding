@@ -29,6 +29,9 @@ h2 {
   text-decoration: none;
   padding: 0 10px;
 }
+.top-navber .controller{
+  margin-left: 90px;
+}
 .top-navber .controller li {
   display: inline-block;
 }
@@ -66,7 +69,7 @@ h2 {
 .main-content .left-side .intro-box img {
   width: 270px;
   height: 230px;
-  margin: -140px 0 0 500px;
+  margin: -165px 0 0 500px;
 }
 .main-content .line {
   grid-column: 9/10;

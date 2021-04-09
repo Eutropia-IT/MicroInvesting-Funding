@@ -3,7 +3,8 @@
 
 
 
-{% comment %} {% block title %} {{uData.name}} {% endblock title %}  
+{% block title %} {{uData.name}} {% endblock title %}  
+{% block uID %} {{uData.id}} {% endblock uID %}
 {% block userEmail %} {{uData.email}} {% endblock userEmail %}
 {% block userCellNumver %} {{uData.cell}} {% endblock userCellNumver %}
 {% block userName %} {{uData.name}} {% endblock userName %}
@@ -11,37 +12,33 @@
 {% block userTotalInvest %} {{uData.totalInvested}} {% endblock userTotalInvest %}
 {% block userAllTimeProfit %} Calculation... {% endblock userAllTimeProfit %}
 
+{% block projectTableData %}
+    {% for prjData in uProjectList %}
+        <tr>
+            <td><a href="/project/{{prjData.id}}" class="text-white text-decoration-none">{{prjData.id}}</a> </td>
+            <td>{{prjData.proj_Name}}</td>
+            <td>{{prjData.proj_Location}}</td>
+            {% if prjData.proj_status == 'new' %} <td class="badge bg-info text-wrap" style="width: 4rem;">{{prjData.proj_status}}</td> {% endif %}
+            {% if prjData.proj_status == 'active' %} <td class="badge bg-success text-wrap" style="width: 4rem;">{{prjData.proj_status}}</td> {% endif %}
+        </tr>
+    {% endfor %}
+{% endblock projectTableData %}
 
-{% block editProfileModal %}
-    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border border-white mymodal__content">
-                <div class="modal-header">
-                        <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="">
-                    <div class="modal-body ">
-                        <div class="input-group flex-nowrap mb-3">
-                            <span class="input-group-text bg-transparent" id="addon-wrapping"><i class="fas fa-envelope"></i></span>
-                            <input type="email" class="form-control bg-transparent" placeholder="Email" value="{{uData.email}}" required>
-                        </div>
-                            <div class="input-group flex-nowrap mb-3">
-                                <span class="input-group-text bg-transparent" id="addon-wrapping"> <i class="fas fa-mobile-alt">  </i></span>
-                                <input type="text" class="form-control bg-transparent" placeholder="Mobile" value="{{uData.cell}}"  required>
-                            </div> 
-                            <div class="input-group flex-nowrap mb-3">
-                                <span class="input-group-text bg-transparent" id="addon-wrapping"><i class="fas fa-unlock-alt"></i></span>
-                                <input type="password" class="form-control bg-transparent" placeholder="Password">
-                            </div>               
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger bg-transparent text-white" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-success bg-transparent text-white">Save changes</button>
-                        </div>
-                </form>
-            </div>
-        </div>
-    </div>
-{% endblock editProfileModal %}
-     {% endcomment %}
+
+
+{% block alertMessage %} 
+    {% if messages %} 
+        {% for mess in messages%} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <script>
+                    swal("Error", "{{mess}}", "error");
+                </script>
+            {% endif %} 
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <script>
+                    swal("Success", "{{mess}}", "success");
+                </script>
+            {% endif %} 
+        {% endfor %} 
+    {% endif %} 
+{% endblock alertMessage %}

@@ -38,9 +38,9 @@
         <h1>MICRO INVESTING & FUNDING</h1>
       </a>
       <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">View Full History</a></li>
+        <li><a href="/investor/dashboard">Dashboard</a></li>
+        {% comment %} <li><a href="#">Profile</a></li>
+        <li><a href="#">View Full History</a></li> {% endcomment %}
         <li><a href="#">Explore</a></li>
       </ul>
       <div class="controller">
@@ -79,6 +79,7 @@
               >{% block userName %}{% endblock userName %}</span
             >
           </h2>
+          <h6> &#160;&#160; <i class="far fa-id-badge"></i> User ID {% block uID %}{% endblock uID %} </h6>
           <ul>
             <li>
               <i class="fas fa-envelope"></i> {% block userEmail %}{% endblock userEmail %}

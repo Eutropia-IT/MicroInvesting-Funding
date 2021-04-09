@@ -9,7 +9,7 @@ class Projects(models.Model):
     proj_Name = models.TextField()
     proj_Location = models.TextField()
     proj_Budget = models.FloatField(default=0.0)
-    proj_Funded = models.FloatField()
+    proj_Funded = models.FloatField(default=0.0)
     profit_Indicator1 = models.FloatField(default=0.00)
     profit_Indicator2 = models.FloatField(default=0.00)
     profit_Indicator3 = models.FloatField(default=0.00)
@@ -17,6 +17,8 @@ class Projects(models.Model):
     feedback2 = models.TextField()
     feedback3 = models.TextField()
     applyDate = models.DateTimeField(default=datetime.now)
+    proj_details = models.TextField()
+    proj_status = models.TextField(default='new')
 
     def __str__(self):
         return '%s' % (self.id)

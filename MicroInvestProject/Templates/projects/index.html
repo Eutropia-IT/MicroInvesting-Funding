@@ -2,12 +2,46 @@
 {% load static %}
 
 {% block userName %} {{selectedProject.entr_ID.name}} {% endblock userName %}
+{% block projectStatus %} {{selectedProject.proj_status}} {% endblock projectStatus %}
 {% block projTile %} {{selectedProject.proj_Name}} {% endblock projTile %}
 {% block projReating %} {{selectedProject.profit_Indicator1}}{{','}}{{selectedProject.profit_Indicator2}}{{','}}{{selectedProject.profit_Indicator3}} {% endblock projReating %}
 {% block projLcation %} {{selectedProject.proj_Location}} {% endblock projLcation %}
-{% block projDescription %} {{'Bogor bogor'}} {% endblock projDescription %}
+{% block projDescription %} {{selectedProject.proj_details}} {% endblock projDescription %}
 
 {% block projBudegect %} {{selectedProject.proj_Budget}} {% endblock projBudegect %}
 {% block projRaised %} {{selectedProject.proj_Budget}} {{'-'}} {{selectedProject.proj_Funded}} {% endblock projRaised %} 
 {% block numOfInvastor %} {{'calcutating...'}} {% endblock numOfInvastor %}
 {% block avalibeInvest %} {{'data pai nai...'}} {% endblock avalibeInvest %}
+
+{% block feedBack1 %} {{selectedProject.feedback1}} {% endblock feedBack1 %}
+{% block feedBack2 %} {{selectedProject.feedback2}} {% endblock feedBack2 %}
+{% block feedBack3 %} {{selectedProject.feedback3}} {% endblock feedBack3 %}
+
+
+{% block actionForm %}
+    {% if uData.isAnalyst  %}
+        <form action="" method="POST">
+		    {% csrf_token %}
+		    <div class="form-floating">
+			    <textarea name="feedBack" class="form-control bg-transparent text-white" placeholder="Leave your feed back here" id="feedBack" style="height: 100px" required></textarea>
+			    <label for="feedBack">Your Feed Back</label>
+		    </div>
+		    <div class="mb-3">
+			    <input type="number" name="rating" step="any" class="form-control bg-transparent text-white" id="rating" placeholder="Rating" required>
+		    </div>
+		    <button type="submit" class="btn btn-success bg-transparent border-success">Active</button>
+		</form>
+	{% else %}
+		<p>Your Corrent Balance:</p> <div class="display-2">0.0 TK</div>
+		<form action="" method="POST">
+			{% csrf_token %}
+			<div class="mb-3">
+				<input type="number" name="amount" step="any" class="form-control bg-transparent text-white" id="rating" placeholder="Amount" required>
+			</div>
+			<button type="submit" class="btn btn-success bg-transparent border-success">Apply</button>
+		</form>
+		
+    {% endif %}
+{% endblock actionForm %}
+
+

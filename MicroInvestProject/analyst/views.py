@@ -8,8 +8,8 @@ def showDashboardPage(request):
     try:
         if 'login' in request.session:
             content = { 'userData' :User.objects.get(id = request.session.get('userID')) }
-
-            print(Projects.objects.all())
+            content['projLIst'] = Projects.objects.all()
+            
             return render(request, 'analyst/index.html', content)
         else:
             messages.error(request, 'Please Login at First')
