@@ -28,4 +28,6 @@ urlpatterns = [
     path('', landingViews.showLandingPage), #Home Page
     path('signup/', landingViews.signUpPage),
     path('logout/', landingViews.logout),
+    path('forgot-password/', landingViews.forgotPassword),
+    path('reset-password/<str:skey>', landingViews.resetPassword)
 ]

@@ -25,7 +25,7 @@
 </form>
 <br />
 <div class="utility">
-    <a href="#">Forgot password?</a> <br />
+    <a href="/forgot-password">Forgot password?</a> <br />
     <a href="#">Don't Have An Account? </a> <br />
     <a href="signup/"><button type="button" class="btn">CREATE NEW ACCOUNT</button></a>
 </div>
@@ -37,6 +37,11 @@
             {% if mess.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
                 <script>
                     swal("Error", "{{mess}}", "error");
+                </script>
+            {% endif %}
+            {% if mess.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <script>
+                    swal("Success", "{{mess}}", "success");
                 </script>
             {% endif %} 
         {% endfor %} 
