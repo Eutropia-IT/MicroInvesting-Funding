@@ -21,25 +21,8 @@
             <p >Marchent: Eutropia IT Soution</p>
             <P>Invoise No: 123521</P>
         </div>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="mb-3 ">
-              <label for="bNumber" class="form-label">Enter bKash Number</label>
-              <input type="number" class="form-control" id="bNumber" placeholder="01XXXXXXXXX" required>
-            </div>
-            <div class="mb-3">
-              <label for="bPIN" class="form-label">bKash PIN</label>
-              <input type="password" class="form-control" id="bPIN" required>
-            </div>
-            <div class="mb-3">
-                <label for="amount" class="form-label">Amount</label>
-                <input type="number" step="any" class="form-control" id="amount" name="amount" required>
-            </div>
-            <div class="btn__group">
-                <button type="submit" class="btn ">PROCEED</button>
-                <button type="submit" class="btn "><a href="/">CANCEL</a> </button>
-            </div>
-          </form>
+        {% block transactionForm %}{% endblock transactionForm %}
+        
           
     </div>
 

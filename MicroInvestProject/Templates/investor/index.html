@@ -8,9 +8,28 @@
 {% block userEmail %} {{uData.email}} {% endblock userEmail %}
 {% block userCellNumver %} {{uData.cell}} {% endblock userCellNumver %}
 {% block userName %} {{uData.name}} {% endblock userName %}
-{% block userBalance %} {{uData.totalInvested}}{{','}}{{uData.totalWithdrawn}} {% endblock userBalance %}
+{% block userBalance %} {{"<br>"}} {{uData.currentBalance}} {% endblock userBalance %}
 {% block userTotalInvest %} {{uData.totalInvested}} {% endblock userTotalInvest %}
-{% block userAllTimeProfit %} Calculation... {% endblock userAllTimeProfit %}
+{% block userAllTimeProfit %} 
+    <h5>  
+        TOTAL PROFIT (ALL TIME) 
+        {% if profit < 0 %}
+        <span class="text-danger">
+        {{ profit|stringformat:"+d"|slice:"1:" }}
+        </span>
+        {% elif profit > 0 %}
+        <span class="text-success">
+        {{ profit }}
+        </span>
+        {% else %}
+        {{ profit }}
+     
+        {% endif %}
+        
+        
+    </h5>
+ 
+{% endblock userAllTimeProfit %}
 
 
 {% block editProfileModal %}
@@ -63,8 +82,8 @@
               <div class="display-6 text-capitalize project__title"> {{pList.proj_Name}} </div>
               <ul>
                 <li>Total Budget: {{pList.proj_Budget}}</li>
-                <li>Invest Up To : {{pList.proj_Funded}}</li>
-                <li>Number Of Investors: {{'calculationg...'}} </li>
+                <li style="color: #171726;">Invest Up To : {{pList.proj_Funded}}</li>
+                <li style="color: #171726;">Number Of Investors: {{'calculationg...'}} </li>
               </ul>
               <div class="indecator">
                 <label for="reating"> 50 </label>

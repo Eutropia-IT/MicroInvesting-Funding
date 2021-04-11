@@ -9,9 +9,9 @@
 {% block projDescription %} {{selectedProject.proj_details}} {% endblock projDescription %}
 
 {% block projBudegect %} {{selectedProject.proj_Budget}} {% endblock projBudegect %}
-{% block projRaised %} {{selectedProject.proj_Budget}} {{'-'}} {{selectedProject.proj_Funded}} {% endblock projRaised %} 
-{% block numOfInvastor %} {{'calcutating...'}} {% endblock numOfInvastor %}
-{% block avalibeInvest %} {{'data pai nai...'}} {% endblock avalibeInvest %}
+{% block projRaised %} {{selectedProject.proj_Funded}} {% endblock projRaised %} 
+{% block numOfInvastor %} {{investorNumber}} {% endblock numOfInvastor %}
+{% block avalibeInvest %} {{canInvest}} {% endblock avalibeInvest %}
 
 {% block feedBack1 %} {{selectedProject.feedback1}} {% endblock feedBack1 %}
 {% block feedBack2 %} {{selectedProject.feedback2}} {% endblock feedBack2 %}
@@ -32,7 +32,7 @@
 		    <button type="submit" class="btn btn-success bg-transparent border-success">Active</button>
 		</form>
 	{% else %}
-		<p>Your Corrent Balance:</p> <div class="display-2">0.0 TK</div>
+		<p>Your Current Balance:</p> <div class="display-2">{{uData.currentBalance}} TK</div>
 		<form action="" method="POST">
 			{% csrf_token %}
 			<div class="mb-3">

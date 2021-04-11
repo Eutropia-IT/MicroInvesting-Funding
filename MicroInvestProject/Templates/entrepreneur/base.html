@@ -70,40 +70,50 @@
                 <li>
                     <img src="{% static 'entrepreneur/images/leader.png' %}" alt="">
                     <h5>TOTAL MEMBERS</h5>
-                    <p>3510</p>
+                    <p>{{totalMembers}}</p>
                 </li>
                 <li>
                     <img src="{% static 'entrepreneur/images/leader.png' %}" alt="">
                     <h5>TOTAL INVESTORS</h5>
-                    <p>3510</p>
+                    <p>{{totalInvestor}}</p>
                 </li>
                 <li>
                     <img src="{% static 'entrepreneur/images/project-management.png' %}" alt="">
                     <h5>TOTAL PROJECTS</h5>
-                    <p>3510</p>
+                    <p>{{projList.count}}</p>
                 </li>
                 <li>
                     <img src="{% static 'entrepreneur/images/investing.png' %}" alt="">
                     <h5>TOTAL INVESTMENT</h5>
-                    <p>3510</p>
+                    <p>৳ {{totalInvested.totalInvested__sum}}</p>
                 </li>
                 <li>
                     <img src="{% static 'entrepreneur/images/Filled outline.png' %}" alt="">
                     <h5>TOTAL RETURN</h5>
-                    <p>3510</p>
+                    <p>৳ {{totalRepaid.totalRepaid__sum}}</p>
                 </li>
             </ul>
         </div>
         <div class="balance-ctrl">
             <li class="t-balance">
                 <img src="{% static 'entrepreneur/images/11420438181578889032.png' %}" alt="">
-                <h5>REMAIN LONE {% block userBalance %} {% endblock userBalance %} </h5>
-                <a href=""><i class="fab fa-amazon-pay"></i></a>
+                <h5>BALANCE {% block userBalance %} {% endblock userBalance %} </h5>
+                <a href="/payment/add-balance"><i class="fas fa-plus-circle"></i></i></a>
             </li>
             <li class="t-invest">
                 <img src="{% static 'entrepreneur/images/idea.png' %}" alt="">
                 <h5>NEW BUSINESS IDEA</h5>
                 <a href="/entrepreneur/apply"><i class="fab">Apply Now</i></a>
+            </li>
+            <li class="t-invest">
+                <img src="{% static 'entrepreneur/images/withdrawal icon_3700442.png' %}" alt="">
+                <h5>WITHDRAW BALANCE</h5>
+                <a href="/payment/withdraw-balance/"><i class="fas fa-minus-circle"></i></a>
+            </li>
+            <li class="t-invest">
+                <img src="{% static 'entrepreneur/images/tax.png' %}" alt="">
+                <h5>TAX PAPER'S</h5>
+                <a href="#"><i class="fab">Submit Now</i></a>
             </li>
         </div>
     </div>

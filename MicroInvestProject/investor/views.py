@@ -1,15 +1,23 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from user.models import User
+from user.models import User, Transaction
 from entrepreneur.models import Projects
+from django.db.models import Sum
+from investor.models import Investment
 
 def showDashboardPage(request):
     try:
         if 'login' in request.session:
             content = { 'uData' : User.objects.get(id = request.session.get('userID')) }
             content['projList'] = Projects.objects.all()
-            
+            content['profit'] = content['uData'].totalRepaid - content['uData'].totalInvested 
+            content['totalMembers'] = User.objects.all().count()
+            content['totalInvestor'] = User.objects.filter(isInvestor=True).count()
+            content['totalInvested'] = User.objects.aggregate(Sum('totalInvested'))
+            content['totalRepaid'] = User.objects.aggregate(Sum('totalRepaid'))
+           
+
             if request.method == 'POST':
                 if  request.POST.get('cPassword') and request.POST.get('password')==content['uData'].password:
                     content['uData'].password = request.POST.get('cPassword')

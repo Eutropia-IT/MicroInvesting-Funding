@@ -32,26 +32,51 @@
 	<div id="fh5co-main">
 		<div class="fh5co-tab-wrap">
 			<ul class="fh5co-tab-menu">
-				<li class="active">
-					<a href="#" data-tab="1"><span class="icon icon-glass"></span><span
-							class="menu-text">Details</span></a>
-				</li>
-				<li>
-					<a href="#" data-tab="2"><span class="icon icon-graduation-cap"></span><span
-							class="menu-text">Information</span></a>
-				</li>
-				<li>
-					<a href="#" data-tab="3"><span class="icon icon-black-tie"></span><span class="menu-text">Feed
-							Back</span></a>
-				</li>
-				<li>
-					<a href="#" data-tab="4" data-pie="yes"><span class="icon icon-fighter-jet"></span><span
-							class="menu-text">Reating</span></a>
-				</li>
-				<li>
-					<a href="#" data-tab="5" data-pie="yes"><span class="icon icon-trophy"></span><span
-							class="menu-text">Action</span></a>
-				</li>
+				{% if uData.isAnalyst %}
+					<li class="active">
+						<a href="#" data-tab="1"><span class="icon icon-glass"></span><span
+								class="menu-text">Details</span></a>
+					</li>
+
+					<!-- <li>
+						<a href="#" data-tab="2"><span class="icon icon-graduation-cap"></span><span
+								class="menu-text">Information</span></a>
+					</li> -->
+					<!-- <li>
+						<a href="#" data-tab="3"><span class="icon icon-black-tie"></span><span class="menu-text">Feed
+								Back</span></a>
+					</li> -->
+					<li>
+						<a href="#" data-tab="4" data-pie="yes"><span class="icon icon-fighter-jet"></span><span
+								class="menu-text">Reating</span></a>
+					</li>
+					<li>
+						<a href="#" data-tab="5" data-pie="yes"><span class="icon icon-trophy"></span><span
+								class="menu-text">Action</span></a>
+					</li>
+				{% else %}
+					<li class="active">
+						<a href="#" data-tab="1"><span class="icon icon-glass"></span><span
+								class="menu-text">Details</span></a>
+					</li>
+
+					<li>
+						<a href="#" data-tab="2"><span class="icon icon-graduation-cap"></span><span
+								class="menu-text">Information</span></a>
+					</li>
+					<li>
+						<a href="#" data-tab="3"><span class="icon icon-black-tie"></span><span class="menu-text">Feed
+								Back</span></a>
+					</li>
+					<li>
+						<a href="#" data-tab="4" data-pie="yes"><span class="icon icon-fighter-jet"></span><span
+								class="menu-text">Reating</span></a>
+					</li>
+					<li>
+						<a href="#" data-tab="5" data-pie="yes"><span class="icon icon-trophy"></span><span
+								class="menu-text">Action</span></a>
+					</li>
+				{% endif %}
 			</ul>
 			<div class="fh5co-tab-content active" data-content="1">
 				<div class="fh5co-content-inner text-center">
@@ -62,7 +87,8 @@
 									alt="Free HTML5 Wesbite Template by FreeHTML5.co" />
 							</figure>
 							<h1> {% block userName %} {% endblock userName %} </h1>
-							<p class="text-capitalize"> {% block projectStatus %}{% endblock projectStatus %} Project </p>
+							<p class="text-capitalize"> {% block projectStatus %}{% endblock projectStatus %} Project
+							</p>
 							<div class="row">
 								<div class="col-md-12 fh5co-counter">
 									<div id="projectReating" class="fh5co-number fh5co-left">{% block projReating %} {% endblock projReating %}</div>
@@ -139,7 +165,7 @@
 				</div>
 			</div>
 
-			<div class="fh5co-tab-content" data-content="3"> 
+			<div class="fh5co-tab-content" data-content="3">
 				<div class="fh5co-content-inner">
 					<div class="row">
 						<div class="col-md-12">
@@ -187,28 +213,90 @@
 			<div class="fh5co-tab-content" data-content="4">
 				<div class="fh5co-content-inner">
 					<div class="row">
+					{% if uData.isAnalyst == False %}
 						<div class="col-md-12"></div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
-							<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator1}}">
-								<span><strong>1st Analyst</strong> <br /><br /><br /> <span class="showValue">62%</span>
-								</span>
-							</div>
-						</div>
+									<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator1}}">
+										<span><strong>Al Amin</strong> <br /><br /><br /> <span class="showValue">62%</span>
+										</span>
+									</div>
+								</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
 							<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator2}}">
-								<span><strong>2nd Analyst</strong> <br /><br /><br /> <span class="showValue">62%</span>
+								<span><strong>Mr. Tahmid</strong> <br />
+									<br />
+									<br />
+									<span class="showValue">62%</span>
 								</span>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 col-xs-12 text-center">
 							<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator3}}">
-								<span><strong>3rd Analyst</strong> <br /><br /><br /> <span class="showValue">62%</span>
+								<span><strong>Shakil</strong> <br />
+									<br />
+									<br />
+									<span class="showValue">62%</span>
 								</span>
 							</div>
 						</div>
+					{% endif %}
+					{% if uData.id == 1 %}
+								<div class="col-md-12"></div>
+								<div class="col-md-4 col-sm-6 col-xs-12 text-center">
+									<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator1}}">
+										<span><strong>My Rating</strong> <br /><br /><br /> <span class="showValue">62%</span>
+										</span>
+									</div>
+								</div>
+								<div class="fh5co-feature">
+									<div class="fh5co-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="fh5co-text">
+										<small> {{selectedProject.feedback1}} </small>
+										<h2>Al Amin</h2>
+										<p>Co-Founder & CEO</p>
+									</div>
+								</div>
+					{% elif uData.id == 2 %}
+							<div class="col-md-4 col-sm-6 col-xs-12 text-center">
+								<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator2}}">
+									<span><strong>My Reating</strong> <br /><br /><br /> <span class="showValue">62%</span>
+									</span>
+								</div>
+							</div>
+							<div class="fh5co-feature">
+									<div class="fh5co-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="fh5co-text">
+										<small> {{selectedProject.feedback2}} </small>
+										<h2>Tahmid</h2>
+										<p>Co-Founder & CEO</p>
+									</div>
+								</div>
+					{% elif uData.id == 3 %}
+							<div class="col-md-4 col-sm-6 col-xs-12 text-center">
+								<div class="chart myChart" data-percent="{{selectedProject.profit_Indicator3}}">
+									<span><strong>Shakil</strong> <br /><br /><br /> <span class="showValue">62%</span>
+									</span>
+								</div>
+							</div>
+							<div class="fh5co-feature">
+									<div class="fh5co-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="fh5co-text">
+										<small> {{selectedProject.feedback3}} </small>
+										<h2>Al Amin</h2>
+										<p>Co-Founder & CEO</p>
+									</div>
+								</div>
+					{% endif %}
 					</div>
 				</div>
 			</div>
+
 
 			<div class="fh5co-tab-content" data-content="5">
 				<div class="fh5co-content-inner">
@@ -229,7 +317,8 @@
 						&copy; 2021 All Rights Reserved.
 						<span class="fh5co-author">
 							by
-							<a href="https://www.facebook.com/almin.cont" target="_blank">{{selectedProject.entr_ID.name}}</a>
+							<a href="https://www.facebook.com/almin.cont"
+								target="_blank">{{selectedProject.entr_ID.name}}</a>
 							Mobile <a href="" target="_blank">0{{selectedProject.entr_ID.cell}}</a></span>
 					</small>
 					<br />

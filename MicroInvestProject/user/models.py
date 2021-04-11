@@ -14,8 +14,9 @@ class User(models.Model):
     isInvestor = models.BooleanField(default=False)
     isEntrepreneur = models.BooleanField(default=False)
     isAnalyst = models.BooleanField(default=False)
+    currentBalance = models.FloatField(default=0.00)
     totalInvested = models.FloatField(default=0.00)
-    totalWithdrawn = models.FloatField(default=0.00)
+    totalRepaid = models.FloatField(default=0.00)
     joiningDate = models.DateTimeField(default=datetime.now)
     def __str__(self):
         return '%s' % (self.id)

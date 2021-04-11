@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from django.db.models import Sum
 from entrepreneur.models import Projects
 from user.models import User
 
@@ -10,7 +11,12 @@ def showDashboardPage(request):
         if 'login' in request.session:
             content = { 'uData' : User.objects.get(id = request.session.get('userID')) }
             content['uProjectList'] = Projects.objects.filter( entr_ID= request.session.get('userID'))
-            print(content['uProjectList'][0].proj_status)
+            content['totalMembers'] = User.objects.all().count()
+            content['projList'] = Projects.objects.all()
+            content['totalInvestor'] = User.objects.filter(isInvestor=True).count()
+            content['totalInvested'] = User.objects.aggregate(Sum('totalInvested'))
+            content['totalRepaid'] = User.objects.aggregate(Sum('totalRepaid'))
+            
             return render(request, 'entrepreneur/index.html', content)
         else:
             messages.error(request, 'Please Login at First')

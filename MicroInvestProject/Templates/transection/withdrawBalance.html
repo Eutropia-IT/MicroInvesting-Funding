@@ -1,19 +1,16 @@
 {% extends 'transection/base.html' %} 
 {% load static %}
 
-{% block title %} {{'Add Balnce'}} {% endblock title %}
+{% block title %} {{'Withdraw Balnce'}} {% endblock title %}
 {% block transactionForm %}
-    <form method="POST">
+<form method="POST">
             {% csrf_token %}
             <input type="hidden" name="prevURL"  value="{{prevURL}}">
             <div class="mb-3 ">
               <label for="bNumber" class="form-label">Enter bKash Number</label>
               <input type="number" class="form-control" id="bNumber" placeholder="01XXXXXXXXX" required>
             </div>
-            <div class="mb-3">
-              <label for="bPIN" class="form-label">bKash PIN</label>
-              <input type="password" class="form-control" id="bPIN" required>
-            </div>
+            
             <div class="mb-3">
                 <label for="amount" class="form-label">Amount</label>
                 <input type="number" step="any" class="form-control" id="amount" name="amount" required>

@@ -15,9 +15,10 @@ class UserModelAdmin(admin.ModelAdmin):
         'isActive',
         'isInvestor',
         'isEntrepreneur',
-        'isAnalyst',
+        'isAnalyst', 
+        'currentBalance',
         'totalInvested',
-        'totalWithdrawn',
+        'totalRepaid',
         'joiningDate',
     )
 admin.site.register(User,UserModelAdmin)

@@ -8,7 +8,7 @@
 {% block userEmail %} {{uData.email}} {% endblock userEmail %}
 {% block userCellNumver %} {{uData.cell}} {% endblock userCellNumver %}
 {% block userName %} {{uData.name}} {% endblock userName %}
-{% block userBalance %} Calculation... {% endblock userBalance %}
+{% block userBalance %} {{'<br/>'}} {{uData.currentBalance}} {% endblock userBalance %}
 {% block userTotalInvest %} {{uData.totalInvested}} {% endblock userTotalInvest %}
 {% block userAllTimeProfit %} Calculation... {% endblock userAllTimeProfit %}
 
@@ -19,6 +19,7 @@
             <td>{{prjData.proj_Name}}</td>
             <td>{{prjData.proj_Location}}</td>
             {% if prjData.proj_status == 'new' %} <td class="badge bg-info text-wrap" style="width: 4rem;">{{prjData.proj_status}}</td> {% endif %}
+            {% if prjData.proj_status == 'pending' %} <td class="badge bg-warning text-wrap" style="width: 4rem;">{{prjData.proj_status}}</td> {% endif %}
             {% if prjData.proj_status == 'active' %} <td class="badge bg-success text-wrap" style="width: 4rem;">{{prjData.proj_status}}</td> {% endif %}
         </tr>
     {% endfor %}

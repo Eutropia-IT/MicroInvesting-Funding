@@ -44,9 +44,9 @@
         <li><a href="#">Explore</a></li>
       </ul>
       <div class="controller">
-        <a href="">
+        <a href="www.google.com">
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox"/>
             <span class="slider round"></span>
           </label>
         </a>
@@ -108,12 +108,12 @@
           <li>
             <img src="{% static 'investor/images/leader.png' %}" alt="" />
             <h5>TOTAL MEMBERS</h5>
-            <p>3510</p>
+            <p>{{totalMembers}}</p>
           </li>
           <li>
             <img src="{% static 'investor/images/leader.png' %}" alt="" />
             <h5>TOTAL INVESTORS</h5>
-            <p>3510</p>
+            <p>{{totalInvestor}}</p>
           </li>
           <li>
             <img
@@ -121,12 +121,12 @@
               alt=""
             />
             <h5>TOTAL PROJECTS</h5>
-            <p>3510</p>
+            <p>{{projList.count}}</p>
           </li>
           <li>
             <img src="{% static 'investor/images/investing.png' %}" alt="" />
             <h5>TOTAL INVESTMENT</h5>
-            <p>3510</p>
+            <p>৳ {{totalInvested.totalInvested__sum}}</p>
           </li>
           <li>
             <img
@@ -134,7 +134,7 @@
               alt=""
             />
             <h5>TOTAL RETURN</h5>
-            <p>3510</p>
+            <p>৳ {{totalRepaid.totalRepaid__sum}}</p>
           </li>
         </ul>
       </div>
@@ -166,15 +166,14 @@
             alt=""
           />
           <h5>WITHDRAW BALANCE</h5>
-          <a href=""
+          <a href="/payment/withdraw-balance"
             ><img src="{% static 'investor/images/minus.png' %}" alt=""
           /></a>
         </li>
         <li class="t-profit">
           <img src="{% static 'investor/images/profit(1).png' %}" alt="" />
-          <h5>
-            TOTAL PROFIT (ALL TIME) {% block userAllTimeProfit %}{% endblock userAllTimeProfit %}
-          </h5>
+          {% block userAllTimeProfit %}{% endblock userAllTimeProfit %}
+          
         </li>
       </div>
     </div>
