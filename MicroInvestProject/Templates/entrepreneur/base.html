@@ -49,7 +49,7 @@
     <div class="main-content">
         <div class="left-side">
             <div class="profile-pic">
-                <img src="{% static 'entrepreneur/images/FB_IMG_1591825027717.jpg' %}" alt="profileImage">
+                <img src="{{'/media/'}}{{uData.profileImage}}" alt="profileImage">
             </div>
             <div class="intro-box">
                 <h2>Welcome back <span class="text-capitalize">{% block userName %}{% endblock userName %}</span> </h2>

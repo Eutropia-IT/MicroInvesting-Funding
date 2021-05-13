@@ -5,6 +5,7 @@ from user.models import User, Transaction
 from entrepreneur.models import Projects
 from django.db.models import Sum
 from investor.models import Investment
+from django.core.files.storage import FileSystemStorage
 
 def showDashboardPage(request):
     try:
@@ -17,8 +18,12 @@ def showDashboardPage(request):
             content['totalInvested'] = User.objects.aggregate(Sum('totalInvested'))
             content['totalRepaid'] = User.objects.aggregate(Sum('totalRepaid'))
            
-
             if request.method == 'POST':
+                if len(request.FILES) != 0:
+                    content['uData'].profileImage = request.FILES['profileImage']
+                    content['uData'].save()
+                    messages.success(request, 'Profile Picture Changed Successfully.')
+                    return redirect('/investor/dashboard')
                 if  request.POST.get('cPassword') and request.POST.get('password')==content['uData'].password:
                     content['uData'].password = request.POST.get('cPassword')
                     content['uData'].save()
@@ -40,8 +45,10 @@ def showDashboardPage(request):
                     return redirect('/investor/dashboard')
                 else:
                     messages.error(request, 'Invalied Email or Password!')
-                    return redirect('/investor/dashboard')
+                    return redirect('/investor/dashboard') 
+                
             else:
+                print(content['uData'].profileImage)
                 return render(request, 'investor/index.html', content)
         else:
             messages.error(request, 'Please Login at First')

@@ -83,8 +83,8 @@
 					<div class="row row-bottom-padded-sm">
 						<div class="col-md-12">
 							<figure>
-								<img src="{% static 'projects/images/FB_IMG_1591825027717.png' %}"
-									alt="Free HTML5 Wesbite Template by FreeHTML5.co" />
+								<img src="{% block userProfileImg %}{% endblock userProfileImg %}"
+									style="width: 200px; height: 200px; border-radius: 50%;" alt="enterpronour_profile_pic" />
 							</figure>
 							<h1> {% block userName %} {% endblock userName %} </h1>
 							<p class="text-capitalize"> {% block projectStatus %}{% endblock projectStatus %} Project

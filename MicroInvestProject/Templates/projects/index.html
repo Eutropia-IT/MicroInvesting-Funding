@@ -1,6 +1,7 @@
 {% extends 'projects/base.html' %} 
 {% load static %}
 
+{% block userProfileImg %} {{'/media/'}}{{selectedProject.entr_ID.profileImage}} {% endblock userProfileImg %}
 {% block userName %} {{selectedProject.entr_ID.name}} {% endblock userName %}
 {% block projectStatus %} {{selectedProject.proj_status}} {% endblock projectStatus %}
 {% block projTile %} {{selectedProject.proj_Name}} {% endblock projTile %}

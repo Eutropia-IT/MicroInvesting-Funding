@@ -17,6 +17,7 @@ class User(models.Model):
     currentBalance = models.FloatField(default=0.00)
     totalInvested = models.FloatField(default=0.00)
     totalRepaid = models.FloatField(default=0.00)
+    profileImage = models.FileField(upload_to='profile', default="default.jpg")
     joiningDate = models.DateTimeField(default=datetime.now)
     def __str__(self):
         return '%s' % (self.id)

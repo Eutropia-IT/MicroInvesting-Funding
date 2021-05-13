@@ -66,9 +66,8 @@
     <!-- main content -->
     <div class="main-content">
       <div class="left-side">
-        <div class="profile-pic">
-          <img
-            src="{% static 'investor/images/FB_IMG_1591825027717.jpg' %}"
+        <div class="profile-pic" data-bs-toggle="modal" data-bs-target="#changeProflePicModal">
+          <img src="{{'/media/'}}{{uData.profileImage}}"
             alt="profileImage"
           />
         </div>
@@ -88,7 +87,7 @@
               <i class="fas fa-mobile-alt"></i> {% block userCellNumver %}{% endblock userCellNumver %}
             </li>
             <li data-bs-toggle="modal" data-bs-target="#editProfileModal">
-              <i class="fas fa-edit"></i> Edit
+              <i class="fas fa-edit"></i> Edit 
             </li>
           </ul>
           <img
@@ -192,6 +191,9 @@
     
     <!-- Edit Profile Modal -->
     {% block editProfileModal %}{% endblock editProfileModal %}
+    <!-- Edit Profile pic -->
+    {% block changeProflePic %}{% endblock changeProflePic %}
+    
 
     <!-- Boostrap JS -->
     <script

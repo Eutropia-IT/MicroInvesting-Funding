@@ -58,6 +58,10 @@ h2 {
   width: 250px;
   border-radius: 50%;
 }
+.main-content .left-side .profile-pic img:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
 .main-content .left-side .intro-box {
   background-color: #6363633f;
   width: 50rem;

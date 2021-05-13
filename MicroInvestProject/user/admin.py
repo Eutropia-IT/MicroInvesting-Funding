@@ -19,6 +19,7 @@ class UserModelAdmin(admin.ModelAdmin):
         'currentBalance',
         'totalInvested',
         'totalRepaid',
+        'profileImage',
         'joiningDate',
     )
 admin.site.register(User,UserModelAdmin)

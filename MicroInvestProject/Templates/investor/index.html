@@ -75,6 +75,32 @@
     </div>
 {% endblock editProfileModal %}
 
+{% block changeProflePic %}
+    <div class="modal fade" id="changeProflePicModal" tabindex="-1" aria-labelledby="changeProflePicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border border-white mymodal__content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="changeProflePicModalLabel">Change Profile Picture</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="input-group flex-nowrap mb-3">
+                             <input type="file" accept="image/*" name="profileImage" id="profileImage" />
+                        </div> 
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger bg-transparent text-white" data-bs-dismiss="modal">Close</button>
+                            <button type="submit"  class="btn btn-success bg-transparent text-white">Save change</button>
+                        </div>
+                    </form>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+{% endblock changeProflePic %}
+
 {% block projectList %} 
     {% for pList in projList %}
         <li class="splide__slide">
