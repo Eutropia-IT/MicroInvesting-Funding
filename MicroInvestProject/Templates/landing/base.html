@@ -20,6 +20,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- css -->
     <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
+    <!-- font awesom -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
 
 <body>
@@ -49,21 +51,7 @@
     </div>
     <!-- intro container END -->
 
-    <div>
-        <h1>For developer purpous.It'll be removed! </h1>
-        <p>
-            <a href="admin/">Go To Admin Panel</a><br>
-            <a href="analyst/dashboard/">Go To Analyst Dashboard Page</a><br>
-            <a href="analyst/review/">Go To Analyst Review Page</a><br>
-            <a href="entrepreneur/dashboard/">Go To Entrepreneur Dashboard Page</a><br>
-            <a href="entrepreneur/apply/">Go To Entrepreneur Apply Page</a><br>
-            <a href="investor/dashboard/">Go To Investor Dashboard Page</a><br>
-            <a href="investor/explore/">Go To Investor Explore Page</a><br>
-            <a href="profile/">Go To Use Profile Page</a><br>
-            <a href="profile/edit/">Go To Edit Profile Page</a><br>
-            <a href="profile/history/">Go To All History of User Page</a><br>
-        </p>
-    </div>
+    {% block sitecontent %}{% endblock sitecontent %}
 
     <!-- Boostrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
